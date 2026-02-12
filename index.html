@@ -20,9 +20,18 @@
         .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.55); z-index: 1000; display: flex; align-items: flex-start; justify-content: center; padding: 20px; overflow-y: auto; }
         .modal-box { background: white; border-radius: 16px; width: 100%; max-width: 700px; margin: auto; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
         .th { padding: 9px 12px; text-align: right; font-weight: 600; background: #f3f4f6; border-bottom: 2px solid #e5e7eb; }
+        #loading { 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            height: 100vh; 
+            font-size: 1.5rem; 
+            color: #667eea;
+        }
     </style>
 </head>
 <body class="bg-gray-50">
+<div id="loading">⏳ טוען מערכת...</div>
 <div id="root"></div>
 <script type="text/babel">
 const { useState, useEffect } = React;
@@ -769,6 +778,9 @@ function App() {
     const [showReports, setShowReports] = useState(false);
     const [showSettings, setShowSettings] = useState(false);
     const [autoBackupEnabled, setAutoBackupEnabled] = useState(false);
+    const [githubToken, setGithubToken] = useState('');
+    const [githubSyncEnabled, setGithubSyncEnabled] = useState(false);
+    const [syncStatus, setSyncStatus] = useState(''); // 'syncing', 'synced', 'error'
     const [importMsg, setImportMsg] = useState(null);
     const [importedExpenses, setImportedExpenses] = useState([]); // [{id, date, registeredBy, client, item, amount, checked}]
     const [showExpenses, setShowExpenses] = useState(false);
@@ -1419,6 +1431,17 @@ function App() {
         if (c) setAvgVAT(parseFloat(c));
         const ab = localStorage.getItem('autoBackupEnabled');
         if (ab) setAutoBackupEnabled(ab === 'true');
+        
+        // Load GitHub settings
+        const token = localStorage.getItem('githubToken');
+        const syncEnabled = localStorage.getItem('githubSyncEnabled');
+        if (token) setGithubToken(token);
+        if (syncEnabled) setGithubSyncEnabled(syncEnabled === 'true');
+        
+        // Load from GitHub if sync is enabled
+        if (token && syncEnabled === 'true') {
+            loadFromGitHub(token);
+        }
     },[]);
 
     useEffect(()=>{
@@ -1434,6 +1457,115 @@ function App() {
     },[selMonth, selYear]);
 
     const set = (k,v) => setCur(p=>({...p,[k]:v}));
+
+    // GitHub Sync Functions
+    const GITHUB_CONFIG = {
+        owner: 'eylonrosner-collab',
+        repo: 'law-office-finance',
+        path: 'data.json',
+        branch: 'main'
+    };
+
+    const saveToGitHub = async (dataToSave) => {
+        if (!githubToken || !githubSyncEnabled) return;
+        
+        setSyncStatus('syncing');
+        try {
+            const url = `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${GITHUB_CONFIG.path}`;
+            
+            // Get current file SHA
+            const getResponse = await fetch(url, {
+                headers: {
+                    'Authorization': `token ${githubToken}`,
+                    'Accept': 'application/vnd.github.v3+json'
+                }
+            });
+            
+            let sha = '';
+            if (getResponse.ok) {
+                const fileData = await getResponse.json();
+                sha = fileData.sha;
+            }
+            
+            // Prepare data
+            const content = {
+                data: dataToSave,
+                avgVAT: avgVAT,
+                lastUpdate: new Date().toISOString()
+            };
+            
+            // Update file
+            const updateResponse = await fetch(url, {
+                method: 'PUT',
+                headers: {
+                    'Authorization': `token ${githubToken}`,
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/vnd.github.v3+json'
+                },
+                body: JSON.stringify({
+                    message: `Update data - ${new Date().toLocaleString('he-IL')}`,
+                    content: btoa(unescape(encodeURIComponent(JSON.stringify(content, null, 2)))),
+                    sha: sha,
+                    branch: GITHUB_CONFIG.branch
+                })
+            });
+            
+            if (updateResponse.ok) {
+                setSyncStatus('synced');
+                setTimeout(() => setSyncStatus(''), 2000);
+            } else {
+                setSyncStatus('error');
+                console.error('GitHub sync error:', await updateResponse.text());
+            }
+        } catch (error) {
+            setSyncStatus('error');
+            console.error('GitHub sync error:', error);
+        }
+    };
+
+    const loadFromGitHub = async (token) => {
+        if (!token) token = githubToken;
+        if (!token) return;
+        
+        try {
+            const url = `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${GITHUB_CONFIG.path}`;
+            const response = await fetch(url, {
+                headers: {
+                    'Authorization': `token ${token}`,
+                    'Accept': 'application/vnd.github.v3+json'
+                }
+            });
+            
+            if (response.ok) {
+                const fileData = await response.json();
+                const content = JSON.parse(decodeURIComponent(escape(atob(fileData.content))));
+                
+                if (content.data) {
+                    setData(content.data);
+                    localStorage.setItem('lawFin_v2', JSON.stringify(content.data));
+                }
+                if (content.avgVAT) {
+                    setAvgVAT(content.avgVAT);
+                    localStorage.setItem('avgVAT_v2', content.avgVAT.toString());
+                }
+                
+                console.log('✅ Data loaded from GitHub');
+            }
+        } catch (error) {
+            console.error('Error loading from GitHub:', error);
+        }
+    };
+
+    // Auto-sync when data changes
+    useEffect(() => {
+        if (githubSyncEnabled && Object.keys(data).length > 0) {
+            const timeoutId = setTimeout(() => {
+                saveToGitHub(data);
+            }, 2000); // Wait 2 seconds after last change
+            
+            return () => clearTimeout(timeoutId);
+        }
+    }, [data, githubSyncEnabled]);
 
     const saveMonth = () => {
         if (!selMonth) { alert('אנא בחר חודש'); return; }
@@ -2066,6 +2198,71 @@ function App() {
                             )}
                         </div>
                     </div>
+
+                    <div style={{marginBottom:24}}>
+                        <h3 style={{fontSize:'0.95rem',fontWeight:700,color:'#374151',marginBottom:12}}>
+                            ☁️ סנכרון עם GitHub
+                            {syncStatus === 'syncing' && <span style={{marginRight:8,fontSize:'0.8rem',color:'#3b82f6'}}>🔄 מסנכרן...</span>}
+                            {syncStatus === 'synced' && <span style={{marginRight:8,fontSize:'0.8rem',color:'#10b981'}}>✅ סונכרן</span>}
+                            {syncStatus === 'error' && <span style={{marginRight:8,fontSize:'0.8rem',color:'#ef4444'}}>❌ שגיאה</span>}
+                        </h3>
+                        <div style={{background:'#f9fafb',padding:'16px',borderRadius:8,border:'1px solid #e5e7eb'}}>
+                            <div style={{marginBottom:12}}>
+                                <label style={{display:'block',fontWeight:600,fontSize:'0.85rem',color:'#374151',marginBottom:6}}>
+                                    GitHub Personal Access Token
+                                </label>
+                                <input 
+                                    type="password"
+                                    className="input-field"
+                                    value={githubToken}
+                                    onChange={(e) => {
+                                        setGithubToken(e.target.value);
+                                        localStorage.setItem('githubToken', e.target.value);
+                                    }}
+                                    placeholder="ghp_xxxxxxxxxxxxxxxxxxxx"
+                                    style={{fontSize:'0.85rem'}}
+                                />
+                                <div style={{fontSize:'0.75rem',color:'#6b7280',marginTop:4}}>
+                                    הטוקן נשמר מקומית ומשמש לסנכרון אוטומטי עם GitHub
+                                </div>
+                            </div>
+                            
+                            <label style={{display:'flex',alignItems:'center',gap:12,cursor:'pointer',marginTop:12}}>
+                                <input 
+                                    type="checkbox" 
+                                    checked={githubSyncEnabled}
+                                    onChange={(e) => {
+                                        const newValue = e.target.checked;
+                                        setGithubSyncEnabled(newValue);
+                                        localStorage.setItem('githubSyncEnabled', newValue.toString());
+                                        if (newValue && githubToken) {
+                                            loadFromGitHub(githubToken);
+                                        }
+                                    }}
+                                    disabled={!githubToken}
+                                    style={{width:18,height:18,cursor:'pointer'}}
+                                />
+                                <div>
+                                    <div style={{fontWeight:600,fontSize:'0.9rem',color:'#1f2937'}}>הפעל סנכרון אוטומטי</div>
+                                    <div style={{fontSize:'0.78rem',color:'#6b7280',marginTop:2}}>שמירה וטעינה אוטומטית מ-GitHub</div>
+                                </div>
+                            </label>
+                            
+                            {githubSyncEnabled && githubToken && (
+                                <div style={{marginTop:12,padding:12,background:'#dbeafe',borderRadius:6,fontSize:'0.8rem',color:'#1e40af'}}>
+                                    ✅ סנכרון פעיל - הנתונים נשמרים ב-GitHub אוטומטית<br/>
+                                    📍 Repository: {GITHUB_CONFIG.owner}/{GITHUB_CONFIG.repo}
+                                </div>
+                            )}
+                            
+                            {!githubToken && (
+                                <div style={{marginTop:12,padding:12,background:'#fef3c7',borderRadius:6,fontSize:'0.8rem',color:'#92400e'}}>
+                                    ⚠️ יש להכניס GitHub Token כדי להפעיל סנכרון
+                                </div>
+                            )}
+                        </div>
+                    </div>
+
                     <div style={{marginBottom:24}}>
                         <h3 style={{fontSize:'0.95rem',fontWeight:700,color:'#374151',marginBottom:12}}>ניהול נתונים</h3>
                         <div style={{display:'grid',gap:12}}>
@@ -2110,7 +2307,14 @@ function App() {
     );
 }
 
-ReactDOM.render(<App/>, document.getElementById('root'));
+// Wait for all libraries to load, then render
+if (typeof React !== 'undefined' && typeof ReactDOM !== 'undefined') {
+    document.getElementById('loading').style.display = 'none';
+    ReactDOM.render(<App/>, document.getElementById('root'));
+} else {
+    console.error('React or ReactDOM not loaded!');
+    document.getElementById('loading').innerHTML = '❌ שגיאה בטעינת המערכת. נסה לרענן את הדף (F5)';
+}
 </script>
 </body>
 </html>
