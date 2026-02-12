@@ -967,8 +967,8 @@
       "workDays": 21,
       "incomeWithVAT": 132972.43,
       "expensesWithVAT": 20300,
-      "vatToPay": 19924.74,
-      "actualVATPaid": 17477,
+      "vatToPay": "19927.74",
+      "actualVATPaid": "17424",
       "openInvoices": 358092,
       "profitDistribution": 50000,
       "notes": "",
@@ -998,10 +998,10 @@
       ],
       "sharonBilling": "50482.5",
       "oritBilling": "53302.5",
-      "savedAt": "12/02/2026 14:47",
+      "savedAt": "12/02/2026 14:51",
       "vatCredit": 0
     }
   },
-  "avgVAT": 2500,
-  "lastUpdate": "2026-02-12T12:50:32.068Z"
+  "avgVAT": 2503.7400000000016,
+  "lastUpdate": "2026-02-12T12:51:15.001Z"
 }
