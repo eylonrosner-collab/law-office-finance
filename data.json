@@ -1429,7 +1429,7 @@
       "vatToPay": 24231,
       "actualVATPaid": "",
       "openInvoices": 353849,
-      "avgDaysOverdue": 50,
+      "avgDaysOverdue": 51,
       "profitDistribution": "55000",
       "notes": "",
       "transfers": [
@@ -1459,7 +1459,7 @@
       "sharonBilling": 63468,
       "oritBilling": 115995,
       "activeClients": 21,
-      "savedAt": "01/03/2026 21:04",
+      "savedAt": "01/03/2026 21:22",
       "expenses": [
         {
           "ACTID": 10001,
@@ -1573,5 +1573,5 @@
     }
   },
   "avgVAT": 2500,
-  "lastUpdate": "2026-03-01T19:20:22.941Z"
+  "lastUpdate": "2026-03-01T19:22:23.169Z"
 }
