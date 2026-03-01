@@ -1415,7 +1415,7 @@
       "sharonBilling": 0,
       "oritBilling": 0,
       "activeClients": 0,
-      "savedAt": "01/03/2026 21:40"
+      "savedAt": "01/03/2026 21:41"
     },
     "2026-02": {
       "billingHours": 258.65,
@@ -1573,5 +1573,5 @@
     }
   },
   "avgVAT": 2500,
-  "lastUpdate": "2026-03-01T19:40:54.116Z"
+  "lastUpdate": "2026-03-01T19:41:08.352Z"
 }
