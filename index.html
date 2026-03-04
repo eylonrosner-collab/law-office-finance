@@ -111,7 +111,7 @@
 <script type="text/babel">
 const { useState, useEffect } = React;
 
-const APP_VERSION = "4.0-Mobile";
+const APP_VERSION = "4.1-Mobile-GitHub-Fixed";
 
 const HISTORICAL = {
     "2021-01":65000,"2021-02":40000,"2021-03":100000,"2021-04":60000,
@@ -2239,37 +2239,79 @@ function App() {
     };
 
     useEffect(()=>{
-        // נסה לטעון מהמפתח החדש
-        let saved = localStorage.getItem('lawFin_v2');
-        // בנה בסיס מהנתונים ההיסטוריים
-        const init = {};
-        for (const [k,v] of Object.entries(HISTORICAL)) {
-            init[k] = {...EMPTY, profitDistribution: v, transfers:[]};
-        }
-        if (saved) {
-            // מיזוג: נתונים שמורים מנצחים, אבל ההיסטוריה תמיד שם
-            const parsed = JSON.parse(saved);
-            for (const [k,v] of Object.entries(parsed)) {
-                init[k] = {...(init[k]||{...EMPTY,transfers:[]}), ...v};
+        const initializeData = async () => {
+            // Load GitHub settings first
+            const token = localStorage.getItem('githubToken');
+            const syncEnabled = localStorage.getItem('githubSyncEnabled');
+            if (token) setGithubToken(token);
+            if (syncEnabled) setGithubSyncEnabled(syncEnabled === 'true');
+            
+            // בנה בסיס מהנתונים ההיסטוריים
+            const init = {};
+            for (const [k,v] of Object.entries(HISTORICAL)) {
+                init[k] = {...EMPTY, profitDistribution: v, transfers:[]};
             }
-        }
-        setData(init);
-        localStorage.setItem('lawFin_v2', JSON.stringify(init));
-        const c = localStorage.getItem('avgVAT_v2');
-        if (c) setAvgVAT(parseFloat(c));
-        const ab = localStorage.getItem('autoBackupEnabled');
-        if (ab) setAutoBackupEnabled(ab === 'true');
+            
+            // Try to load from GitHub first if sync is enabled
+            if (token && syncEnabled === 'true') {
+                try {
+                    const url = `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${GITHUB_CONFIG.path}`;
+                    const response = await fetch(url, {
+                        headers: {
+                            'Authorization': `token ${token}`,
+                            'Accept': 'application/vnd.github.v3+json'
+                        }
+                    });
+                    
+                    if (response.ok) {
+                        const fileData = await response.json();
+                        const content = JSON.parse(decodeURIComponent(escape(atob(fileData.content))));
+                        
+                        if (content.data) {
+                            // Merge GitHub data with historical data
+                            for (const [k,v] of Object.entries(content.data)) {
+                                init[k] = {...(init[k]||{...EMPTY,transfers:[]}), ...v};
+                            }
+                            setData(init);
+                            localStorage.setItem('lawFin_v2', JSON.stringify(init));
+                            
+                            if (content.avgVAT) {
+                                setAvgVAT(content.avgVAT);
+                                localStorage.setItem('avgVAT_v2', content.avgVAT.toString());
+                            }
+                            
+                            console.log('✅ נתונים נטענו מ-GitHub בהצלחה');
+                            setSyncStatus('synced');
+                            setTimeout(() => setSyncStatus(''), 3000);
+                            return; // Don't load from localStorage
+                        }
+                    }
+                } catch (error) {
+                    console.error('❌ שגיאה בטעינה מ-GitHub:', error);
+                    setSyncStatus('error');
+                }
+            }
+            
+            // Fallback to localStorage if GitHub sync failed or not enabled
+            let saved = localStorage.getItem('lawFin_v2');
+            if (saved) {
+                const parsed = JSON.parse(saved);
+                for (const [k,v] of Object.entries(parsed)) {
+                    init[k] = {...(init[k]||{...EMPTY,transfers:[]}), ...v};
+                }
+                console.log('📂 נתונים נטענו מ-localStorage');
+            }
+            
+            setData(init);
+            localStorage.setItem('lawFin_v2', JSON.stringify(init));
+            
+            const c = localStorage.getItem('avgVAT_v2');
+            if (c) setAvgVAT(parseFloat(c));
+            const ab = localStorage.getItem('autoBackupEnabled');
+            if (ab) setAutoBackupEnabled(ab === 'true');
+        };
         
-        // Load GitHub settings
-        const token = localStorage.getItem('githubToken');
-        const syncEnabled = localStorage.getItem('githubSyncEnabled');
-        if (token) setGithubToken(token);
-        if (syncEnabled) setGithubSyncEnabled(syncEnabled === 'true');
-        
-        // Load from GitHub if sync is enabled
-        if (token && syncEnabled === 'true') {
-            loadFromGitHub(token);
-        }
+        initializeData();
     },[]);
 
     useEffect(()=>{
@@ -3835,9 +3877,46 @@ function App() {
                             </label>
                             
                             {githubSyncEnabled && githubToken && (
-                                <div style={{marginTop:12,padding:12,background:'#dbeafe',borderRadius:6,fontSize:'0.8rem',color:'#1e40af'}}>
-                                    ✅ סנכרון פעיל - הנתונים נשמרים ב-GitHub אוטומטית<br/>
-                                    📍 Repository: {GITHUB_CONFIG.owner}/{GITHUB_CONFIG.repo}
+                                <div>
+                                    <div style={{marginTop:12,padding:12,background:'#dbeafe',borderRadius:6,fontSize:'0.8rem',color:'#1e40af'}}>
+                                        ✅ סנכרון פעיל - הנתונים נשמרים ב-GitHub אוטומטית<br/>
+                                        📍 Repository: {GITHUB_CONFIG.owner}/{GITHUB_CONFIG.repo}
+                                    </div>
+                                    
+                                    <div style={{display:'flex',gap:8,marginTop:12}}>
+                                        <button
+                                            onClick={() => loadFromGitHub(githubToken)}
+                                            style={{
+                                                flex:1,
+                                                padding:'10px 16px',
+                                                borderRadius:6,
+                                                border:'1px solid #3b82f6',
+                                                background:'white',
+                                                color:'#3b82f6',
+                                                fontWeight:600,
+                                                cursor:'pointer',
+                                                fontSize:'0.85rem'
+                                            }}
+                                        >
+                                            ⬇️ טען מ-GitHub
+                                        </button>
+                                        <button
+                                            onClick={() => saveToGitHub(data)}
+                                            style={{
+                                                flex:1,
+                                                padding:'10px 16px',
+                                                borderRadius:6,
+                                                border:'1px solid #10b981',
+                                                background:'white',
+                                                color:'#10b981',
+                                                fontWeight:600,
+                                                cursor:'pointer',
+                                                fontSize:'0.85rem'
+                                            }}
+                                        >
+                                            ⬆️ שמור ל-GitHub
+                                        </button>
+                                    </div>
                                 </div>
                             )}
                             
