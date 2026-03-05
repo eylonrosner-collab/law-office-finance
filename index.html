@@ -111,7 +111,7 @@
 <script type="text/babel">
 const { useState, useEffect } = React;
 
-const APP_VERSION = "4.1-Mobile-GitHub-Fixed";
+const APP_VERSION = "4.2";
 
 const HISTORICAL = {
     "2021-01":65000,"2021-02":40000,"2021-03":100000,"2021-04":60000,
@@ -3925,6 +3925,52 @@ function App() {
                                     ⚠️ יש להכניס GitHub Token כדי להפעיל סנכרון
                                 </div>
                             )}
+                        </div>
+                    </div>
+
+                    <div style={{marginBottom:24}}>
+                        <h3 style={{fontSize:'0.95rem',fontWeight:700,color:'#374151',marginBottom:12}}>
+                            🔌 חיבור לעודכנית (ODCANIT)
+                        </h3>
+                        <div style={{background:'#fef3c7',padding:16,borderRadius:8,border:'1px solid #fbbf24'}}>
+                            <div style={{fontSize:'0.85rem',color:'#78350f',lineHeight:1.6}}>
+                                <div style={{fontWeight:700,marginBottom:8,fontSize:'0.9rem'}}>
+                                    ⚠️ לפני שמשתמשים ב"ייבוא מעודכנית":
+                                </div>
+                                
+                                <div style={{marginBottom:12}}>
+                                    <div style={{fontWeight:600,marginBottom:4}}>1️⃣ התחבר למחשב המשרד:</div>
+                                    <div style={{marginRight:20,fontSize:'0.8rem',color:'#92400e'}}>
+                                        • עבוד ישירות ממחשב המשרד, או<br/>
+                                        • התחבר דרך VPN למחשב המשרד
+                                    </div>
+                                </div>
+                                
+                                <div style={{marginBottom:12}}>
+                                    <div style={{fontWeight:600,marginBottom:4}}>2️⃣ הרץ את שרת ה-API:</div>
+                                    <div style={{marginRight:20,fontSize:'0.8rem',color:'#92400e'}}>
+                                        • פתח <strong>CMD</strong> (Command Prompt)<br/>
+                                        • עבור לתיקייה: <code style={{background:'#fff',padding:'2px 6px',borderRadius:3}}>cd C:\odcanit</code><br/>
+                                        • הרץ: <code style={{background:'#fff',padding:'2px 6px',borderRadius:3}}>python odcanit_api_server.py</code><br/>
+                                        • וודא שהשרת רץ על <code style={{background:'#fff',padding:'2px 6px',borderRadius:3}}>http://localhost:5000</code>
+                                    </div>
+                                </div>
+                                
+                                <div style={{marginTop:12,padding:10,background:'#dcfce7',borderRadius:6,border:'1px solid #86efac'}}>
+                                    <div style={{fontWeight:600,color:'#166534',marginBottom:4,fontSize:'0.85rem'}}>
+                                        ✅ כשהשרת רץ בהצלחה תראה:
+                                    </div>
+                                    <div style={{fontSize:'0.75rem',color:'#166534',fontFamily:'monospace',marginRight:12}}>
+                                        🚀 ODCANIT Import API Server<br/>
+                                        ✅ חיבור למסד הנתונים הצליח!<br/>
+                                        השרת מאזין על http://localhost:5000
+                                    </div>
+                                </div>
+                                
+                                <div style={{marginTop:12,fontSize:'0.75rem',color:'#92400e',fontStyle:'italic'}}>
+                                    💡 טיפ: השאר את חלון ה-CMD פתוח בזמן שמשתמשים בייבוא
+                                </div>
+                            </div>
                         </div>
                     </div>
 
