@@ -1397,26 +1397,54 @@
       "oritExpenses": 300
     },
     "2026-03": {
-      "billingHours": 36.25,
-      "totalBillings": 16400,
-      "billingExpenses": "",
+      "billingHours": 111.5,
+      "totalBillings": 52680,
+      "billingExpenses": 572,
       "retainerFee": 0,
-      "retainerHours": 6,
+      "retainerHours": 16.25,
       "workDays": 22,
-      "incomeWithVAT": 100010,
+      "incomeWithVAT": 181325,
       "expensesWithVAT": 0,
-      "vatToPay": 15230,
+      "vatToPay": 27634,
       "actualVATPaid": "",
-      "openInvoices": 269069,
-      "avgDaysOverdue": 58,
+      "openInvoices": 201958,
+      "avgDaysOverdue": 69,
       "profitDistribution": "",
       "notes": "",
       "transfers": [],
-      "sharonBilling": 6050,
-      "oritBilling": 10350,
-      "activeClients": 10,
-      "savedAt": "04/03/2026 21:08",
-      "expenses": []
+      "sharonBilling": 27743,
+      "oritBilling": 24938,
+      "activeClients": 14,
+      "savedAt": "14/03/2026 11:08",
+      "expenses": [
+        {
+          "ACTID": 10001,
+          "Category": 2,
+          "amount": 31,
+          "billingDescription": "חניה פנגו",
+          "date": "2026-03-09",
+          "description": "הוצאות כלליות",
+          "registeredBy": "אורית זילוני-קליינמן"
+        },
+        {
+          "ACTID": 10001,
+          "Category": 2,
+          "amount": 454.3,
+          "billingDescription": "שליחות - מסירת בקשה בשחל + בית הדין לעבודה לפי חשבונית יוריסט 15525",
+          "date": "2026-03-09",
+          "description": "הוצאות כלליות",
+          "registeredBy": "שרון לולצ'י"
+        },
+        {
+          "ACTID": 10001,
+          "Category": 2,
+          "amount": 189.98,
+          "billingDescription": "שליחויות - מסירה של תצהיר עות ראשית למשרד שחר דור + בית הדין לעבודה  לפי חשבונית יוריסט 15525",
+          "date": "2026-03-09",
+          "description": "הוצאות כלליות",
+          "registeredBy": "שרון לולצ'י"
+        }
+      ]
     },
     "2026-02": {
       "billingHours": 258.65,
@@ -1574,5 +1602,5 @@
     }
   },
   "avgVAT": 2500,
-  "lastUpdate": "2026-03-14T09:07:41.264Z"
+  "lastUpdate": "2026-03-14T09:08:45.454Z"
 }
