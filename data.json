@@ -1397,25 +1397,25 @@
       "oritExpenses": 300
     },
     "2026-03": {
-      "billingHours": 111.5,
-      "totalBillings": 52680,
-      "billingExpenses": 572,
+      "billingHours": 184.5,
+      "totalBillings": 77782,
+      "billingExpenses": 652,
       "retainerFee": 0,
-      "retainerHours": 16.25,
+      "retainerHours": 28.5,
       "workDays": 22,
-      "incomeWithVAT": 181325,
+      "incomeWithVAT": 186794,
       "expensesWithVAT": 0,
-      "vatToPay": 27634,
+      "vatToPay": 28468,
       "actualVATPaid": "",
       "openInvoices": 201958,
       "avgDaysOverdue": 69,
       "profitDistribution": "",
       "notes": "",
       "transfers": [],
-      "sharonBilling": 27743,
-      "oritBilling": 24938,
+      "sharonBilling": 42405,
+      "oritBilling": 35378,
       "activeClients": 14,
-      "savedAt": "14/03/2026 11:08",
+      "savedAt": "24/03/2026 19:05",
       "expenses": [
         {
           "ACTID": 10001,
@@ -1425,24 +1425,6 @@
           "date": "2026-03-09",
           "description": "הוצאות כלליות",
           "registeredBy": "אורית זילוני-קליינמן"
-        },
-        {
-          "ACTID": 10001,
-          "Category": 2,
-          "amount": 454.3,
-          "billingDescription": "שליחות - מסירת בקשה בשחל + בית הדין לעבודה לפי חשבונית יוריסט 15525",
-          "date": "2026-03-09",
-          "description": "הוצאות כלליות",
-          "registeredBy": "שרון לולצ'י"
-        },
-        {
-          "ACTID": 10001,
-          "Category": 2,
-          "amount": 189.98,
-          "billingDescription": "שליחויות - מסירה של תצהיר עות ראשית למשרד שחר דור + בית הדין לעבודה  לפי חשבונית יוריסט 15525",
-          "date": "2026-03-09",
-          "description": "הוצאות כלליות",
-          "registeredBy": "שרון לולצ'י"
         }
       ]
     },
@@ -1602,5 +1584,5 @@
     }
   },
   "avgVAT": 2500,
-  "lastUpdate": "2026-03-24T17:04:46.252Z"
+  "lastUpdate": "2026-03-24T17:05:44.671Z"
 }
