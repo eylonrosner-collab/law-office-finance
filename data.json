@@ -1438,7 +1438,7 @@
       "incomeWithVAT": 158846,
       "expensesWithVAT": "12645",
       "vatToPay": 24231,
-      "actualVATPaid": "",
+      "actualVATPaid": "21941",
       "openInvoices": 353849,
       "avgDaysOverdue": 51,
       "profitDistribution": "55000",
@@ -1470,7 +1470,7 @@
       "sharonBilling": 63468,
       "oritBilling": 115995,
       "activeClients": 21,
-      "savedAt": "01/03/2026 21:28",
+      "savedAt": "24/03/2026 19:07",
       "expenses": [
         {
           "ACTID": 10001,
@@ -1583,6 +1583,6 @@
       "oritExpenses": 669.07
     }
   },
-  "avgVAT": 2500,
-  "lastUpdate": "2026-03-24T17:06:32.278Z"
+  "avgVAT": 2290,
+  "lastUpdate": "2026-03-24T17:07:33.614Z"
 }
