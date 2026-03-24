@@ -1415,7 +1415,7 @@
       "sharonBilling": 42405,
       "oritBilling": 35378,
       "activeClients": 14,
-      "savedAt": "24/03/2026 19:05",
+      "savedAt": "24/03/2026 19:06",
       "expenses": [
         {
           "ACTID": 10001,
@@ -1584,5 +1584,5 @@
     }
   },
   "avgVAT": 2500,
-  "lastUpdate": "2026-03-24T17:06:04.527Z"
+  "lastUpdate": "2026-03-24T17:06:20.706Z"
 }
