@@ -1404,10 +1404,10 @@
       "retainerHours": 40,
       "workDays": 22,
       "incomeWithVAT": 210401,
-      "expensesWithVAT": 0,
+      "expensesWithVAT": "13164",
       "vatToPay": 32069,
       "actualVATPaid": "",
-      "openInvoices": 201958,
+      "openInvoices": "201959",
       "avgDaysOverdue": 69,
       "profitDistribution": "",
       "notes": "",
@@ -1415,7 +1415,7 @@
       "sharonBilling": 54942,
       "oritBilling": 90778,
       "activeClients": 14,
-      "savedAt": "31/03/2026 16:40",
+      "savedAt": "31/03/2026 16:48",
       "expenses": [
         {
           "ACTID": 10001,
@@ -1584,5 +1584,5 @@
     }
   },
   "avgVAT": 2500,
-  "lastUpdate": "2026-03-31T13:40:44.457Z"
+  "lastUpdate": "2026-03-31T13:48:15.854Z"
 }
