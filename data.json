@@ -1397,34 +1397,34 @@
       "oritExpenses": 300
     },
     "2026-03": {
-      "billingHours": 184.5,
-      "totalBillings": 77782,
+      "billingHours": 244.75,
+      "totalBillings": 145720,
       "billingExpenses": 652,
-      "retainerFee": 0,
-      "retainerHours": 28.5,
+      "retainerFee": 50000,
+      "retainerHours": 40,
       "workDays": 22,
-      "incomeWithVAT": 186794,
+      "incomeWithVAT": 210401,
       "expensesWithVAT": 0,
-      "vatToPay": 28468,
+      "vatToPay": 32069,
       "actualVATPaid": "",
       "openInvoices": 201958,
       "avgDaysOverdue": 69,
       "profitDistribution": "",
       "notes": "",
       "transfers": [],
-      "sharonBilling": 42405,
-      "oritBilling": 35378,
+      "sharonBilling": 54942,
+      "oritBilling": 90778,
       "activeClients": 14,
-      "savedAt": "24/03/2026 19:06",
+      "savedAt": "31/03/2026 16:39",
       "expenses": [
         {
           "ACTID": 10001,
           "Category": 2,
-          "amount": 31,
-          "billingDescription": "חניה פנגו",
+          "amount": 189.98,
+          "billingDescription": "שליחויות - מסירה של תצהיר עות ראשית למשרד שחר דור + בית הדין לעבודה  לפי חשבונית יוריסט 15525",
           "date": "2026-03-09",
           "description": "הוצאות כלליות",
-          "registeredBy": "אורית זילוני-קליינמן"
+          "registeredBy": "שרון לולצ'י"
         }
       ]
     },
@@ -1584,5 +1584,5 @@
     }
   },
   "avgVAT": 2500,
-  "lastUpdate": "2026-03-31T13:39:22.038Z"
+  "lastUpdate": "2026-03-31T13:39:28.317Z"
 }
