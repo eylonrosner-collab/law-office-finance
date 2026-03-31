@@ -1438,7 +1438,7 @@
       "sharonBilling": 54942,
       "oritBilling": 90778,
       "activeClients": 20,
-      "savedAt": "31/03/2026 22:41",
+      "savedAt": "31/03/2026 22:42",
       "expenses": [
         {
           "ACTID": 10001,
@@ -1448,33 +1448,6 @@
           "date": "2026-03-09",
           "description": "הוצאות כלליות",
           "registeredBy": "שרון לולצ'י"
-        },
-        {
-          "ACTID": 10001,
-          "Category": 2,
-          "amount": 31,
-          "billingDescription": "חניה פנגו",
-          "date": "2026-03-09",
-          "description": "הוצאות כלליות",
-          "registeredBy": "אורית זילוני-קליינמן"
-        },
-        {
-          "ACTID": 10001,
-          "Category": 2,
-          "amount": 454.3,
-          "billingDescription": "שליחות - מסירת בקשה בשחל + בית הדין לעבודה לפי חשבונית יוריסט 15525",
-          "date": "2026-03-09",
-          "description": "הוצאות כלליות",
-          "registeredBy": "שרון לולצ'י"
-        },
-        {
-          "ACTID": 7,
-          "Category": 2,
-          "amount": 94.4,
-          "billingDescription": "נסיעה לרמלה וחזרה",
-          "date": "2026-03-23",
-          "description": "נסיעה לפי ק\"מ",
-          "registeredBy": "אורית זילוני-קליינמן"
         }
       ],
       "expenseRefunds": {
@@ -1654,5 +1627,5 @@
     }
   },
   "avgVAT": 2500,
-  "lastUpdate": "2026-03-31T19:42:02.838Z"
+  "lastUpdate": "2026-03-31T19:42:17.229Z"
 }
