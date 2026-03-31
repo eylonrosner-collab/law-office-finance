@@ -2706,7 +2706,7 @@ function App() {
                         LEFT JOIN vwExportToOuterSystems_LoginUsers u ON u.UserID = b.UserID
                         WHERE YEAR(Dated) = ${year} 
                             AND MONTH(Dated) = ${month}
-                            AND ACTID IN (7, 10001)
+                            AND Category = 2
                         ORDER BY Dated
                     `,
                     expensesTotal: `
@@ -2715,7 +2715,7 @@ function App() {
                         FROM vwExportToOuterSystems_Billing
                         WHERE YEAR(Dated) = ${year} 
                             AND MONTH(Dated) = ${month}
-                            AND ACTID IN (7, 10001)
+                            AND Category = 2
                     `,
                     allBillingsDebug: `
                         SELECT TOP 20
