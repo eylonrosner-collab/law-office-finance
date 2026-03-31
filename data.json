@@ -1476,7 +1476,27 @@
           "description": "נסיעה לפי ק\"מ",
           "registeredBy": "אורית זילוני-קליינמן"
         }
-      ]
+      ],
+      "expenseRefunds": {
+        "odcanit_0": {
+          "refund": false,
+          "partner": "none"
+        },
+        "odcanit_1": {
+          "refund": true,
+          "partner": "orit"
+        },
+        "odcanit_2": {
+          "refund": false,
+          "partner": "none"
+        },
+        "odcanit_3": {
+          "refund": true,
+          "partner": "orit"
+        }
+      },
+      "sharonExpenses": 0,
+      "oritExpenses": 125.4
     },
     "2026-02": {
       "billingHours": 258.65,
@@ -1634,5 +1654,5 @@
     }
   },
   "avgVAT": 2500,
-  "lastUpdate": "2026-03-31T19:39:55.668Z"
+  "lastUpdate": "2026-03-31T19:40:02.055Z"
 }
