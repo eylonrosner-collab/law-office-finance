@@ -1426,13 +1426,13 @@
         {
           "partner": "orit",
           "profitAmount": "85000",
-          "expensesAmount": "145.40",
+          "expensesAmount": "145",
           "transferDate": "31/03/2026",
-          "referenceNumber": "",
+          "referenceNumber": "10330",
           "transferredBy": "",
-          "notes": "125 + 20 מחודש קודם",
-          "total": 85145.4,
-          "savedAt": "31.3.2026, 16:51:00"
+          "notes": "כולל 20 שח מחודש קודם",
+          "total": 85145,
+          "savedAt": "31.3.2026, 22:40:20"
         }
       ],
       "sharonBilling": 54942,
@@ -1654,5 +1654,5 @@
     }
   },
   "avgVAT": 2500,
-  "lastUpdate": "2026-03-31T19:40:02.055Z"
+  "lastUpdate": "2026-03-31T19:40:24.382Z"
 }
