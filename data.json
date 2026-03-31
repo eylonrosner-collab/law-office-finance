@@ -1428,11 +1428,11 @@
           "profitAmount": "85000",
           "expensesAmount": "145",
           "transferDate": "31/03/2026",
-          "referenceNumber": "10330",
-          "transferredBy": "",
-          "notes": "כולל 20 שח מחודש קודם",
+          "referenceNumber": "10350",
+          "transferredBy": "כולל 20 שח קודמים",
+          "notes": "",
           "total": 85145,
-          "savedAt": "31.3.2026, 22:40:20"
+          "savedAt": "31.3.2026, 22:40:54"
         }
       ],
       "sharonBilling": 54942,
@@ -1654,5 +1654,5 @@
     }
   },
   "avgVAT": 2500,
-  "lastUpdate": "2026-03-31T19:40:24.382Z"
+  "lastUpdate": "2026-03-31T19:40:58.202Z"
 }
