@@ -1407,7 +1407,7 @@
       "expensesWithVAT": "13164",
       "vatToPay": 32069,
       "actualVATPaid": "",
-      "openInvoices": "201959",
+      "openInvoices": "387045",
       "avgDaysOverdue": 69,
       "profitDistribution": "85000",
       "notes": "",
@@ -1607,5 +1607,5 @@
     }
   },
   "avgVAT": 2500,
-  "lastUpdate": "2026-03-31T18:45:45.286Z"
+  "lastUpdate": "2026-03-31T18:46:01.221Z"
 }
