@@ -1655,7 +1655,7 @@
     "2026-04": {
       "billingHours": 52.5,
       "totalBillings": 19415,
-      "billingExpenses": 65,
+      "billingExpenses": 74,
       "retainerFee": 0,
       "retainerHours": 1,
       "workDays": 21,
@@ -1670,7 +1670,7 @@
       "transfers": [],
       "sharonBilling": 14685,
       "oritBilling": 4730,
-      "activeClients": 8,
+      "activeClients": 9,
       "expenses": [
         {
           "ACTID": 10001,
@@ -1689,11 +1689,20 @@
           "date": "2026-04-13",
           "description": "נסיעה לפי ק\"מ",
           "registeredBy": "אורית זילוני-קליינמן"
+        },
+        {
+          "ACTID": 10001,
+          "Category": 2,
+          "amount": 9.99,
+          "billingDescription": "הוצאות",
+          "date": "2026-04-13",
+          "description": "הוצאות כלליות",
+          "registeredBy": "שרון לולצ'י"
         }
       ],
-      "savedAt": "13/04/2026 20:41"
+      "savedAt": "13/04/2026 20:43"
     }
   },
   "avgVAT": 2500,
-  "lastUpdate": "2026-04-13T17:41:43.022Z"
+  "lastUpdate": "2026-04-13T17:43:21.362Z"
 }
