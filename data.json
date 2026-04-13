@@ -1653,11 +1653,11 @@
       "oritExpenses": 669.07
     },
     "2026-04": {
-      "billingHours": 44,
-      "totalBillings": 16935,
-      "billingExpenses": "",
+      "billingHours": 52.5,
+      "totalBillings": 19415,
+      "billingExpenses": 65,
       "retainerFee": 0,
-      "retainerHours": "",
+      "retainerHours": 1,
       "workDays": 21,
       "incomeWithVAT": 158468,
       "expensesWithVAT": 0,
@@ -1668,13 +1668,32 @@
       "profitDistribution": "",
       "notes": "",
       "transfers": [],
-      "sharonBilling": 13325,
-      "oritBilling": 3610,
-      "activeClients": 7,
-      "expenses": [],
-      "savedAt": "13/04/2026 01:19"
+      "sharonBilling": 14685,
+      "oritBilling": 4730,
+      "activeClients": 8,
+      "expenses": [
+        {
+          "ACTID": 10001,
+          "Category": 2,
+          "amount": 30,
+          "billingDescription": "חניה",
+          "date": "2026-04-13",
+          "description": "הוצאות כלליות",
+          "registeredBy": "אורית זילוני-קליינמן"
+        },
+        {
+          "ACTID": 7,
+          "Category": 2,
+          "amount": 47.2,
+          "billingDescription": "נסיעה לבית הדין",
+          "date": "2026-04-13",
+          "description": "נסיעה לפי ק\"מ",
+          "registeredBy": "אורית זילוני-קליינמן"
+        }
+      ],
+      "savedAt": "13/04/2026 20:41"
     }
   },
   "avgVAT": 2500,
-  "lastUpdate": "2026-04-13T17:41:22.307Z"
+  "lastUpdate": "2026-04-13T17:41:43.022Z"
 }
