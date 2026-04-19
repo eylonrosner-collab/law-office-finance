@@ -1653,24 +1653,24 @@
       "oritExpenses": 669.07
     },
     "2026-04": {
-      "billingHours": 52.5,
-      "totalBillings": 19415,
-      "billingExpenses": 74,
+      "billingHours": 111.75,
+      "totalBillings": 46320,
+      "billingExpenses": 546,
       "retainerFee": 0,
-      "retainerHours": 1,
+      "retainerHours": 4,
       "workDays": 21,
-      "incomeWithVAT": 158468,
+      "incomeWithVAT": 195437,
       "expensesWithVAT": 0,
-      "vatToPay": 24173,
+      "vatToPay": 29812,
       "actualVATPaid": "",
-      "openInvoices": 195069,
-      "avgDaysOverdue": 79,
+      "openInvoices": 163739,
+      "avgDaysOverdue": 87,
       "profitDistribution": "",
       "notes": "",
       "transfers": [],
-      "sharonBilling": 14685,
-      "oritBilling": 4730,
-      "activeClients": 9,
+      "sharonBilling": 29670,
+      "oritBilling": 16650,
+      "activeClients": 17,
       "expenses": [
         {
           "ACTID": 10001,
@@ -1698,11 +1698,38 @@
           "date": "2026-04-13",
           "description": "הוצאות כלליות",
           "registeredBy": "שרון לולצ'י"
+        },
+        {
+          "ACTID": 7,
+          "Category": 2,
+          "amount": 47.2,
+          "billingDescription": "נסיעה לאור יהודה וחזרה",
+          "date": "2026-04-14",
+          "description": "נסיעה לפי ק\"מ",
+          "registeredBy": "אורית זילוני-קליינמן"
+        },
+        {
+          "ACTID": 10001,
+          "Category": 2,
+          "amount": 13.989999999999998,
+          "billingDescription": "חניה פנגו",
+          "date": "2026-04-14",
+          "description": "הוצאות כלליות",
+          "registeredBy": "אורית זילוני-קליינמן"
+        },
+        {
+          "ACTID": 10001,
+          "Category": 2,
+          "amount": 420,
+          "billingDescription": "אגרת בית משפט",
+          "date": "2026-04-19",
+          "description": "הוצאות כלליות",
+          "registeredBy": "שרון לולצ'י"
         }
       ],
-      "savedAt": "13/04/2026 21:02"
+      "savedAt": "19/04/2026 20:46"
     }
   },
   "avgVAT": 2500,
-  "lastUpdate": "2026-04-19T17:45:37.439Z"
+  "lastUpdate": "2026-04-19T17:46:40.919Z"
 }
