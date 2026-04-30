@@ -1663,10 +1663,10 @@
       "expensesWithVAT": "14081",
       "vatToPay": 31480,
       "actualVATPaid": "",
-      "openInvoices": 291927,
+      "openInvoices": "349608",
       "avgDaysOverdue": 62,
       "profitDistribution": "85000",
-      "notes": "",
+      "notes": "פסח ויום העצמאות",
       "transfers": [
         {
           "partner": "sharon",
@@ -1759,7 +1759,7 @@
           "registeredBy": "אורית זילוני-קליינמן"
         }
       ],
-      "savedAt": "30/04/2026 22:29",
+      "savedAt": "30/04/2026 23:41",
       "expenseRefunds": {
         "odcanit_0": {
           "refund": true,
@@ -1794,6 +1794,6 @@
       "oritExpenses": 232.79000000000002
     }
   },
-  "avgVAT": 2500,
-  "lastUpdate": "2026-04-30T19:29:14.922Z"
+  "avgVAT": 2290,
+  "lastUpdate": "2026-04-30T20:41:44.214Z"
 }
