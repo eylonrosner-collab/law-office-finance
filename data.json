@@ -1736,9 +1736,41 @@
           "registeredBy": "אורית זילוני-קליינמן"
         }
       ],
-      "savedAt": "30/04/2026 22:20"
+      "savedAt": "30/04/2026 22:20",
+      "expenseRefunds": {
+        "odcanit_0": {
+          "refund": true,
+          "partner": "orit"
+        },
+        "odcanit_1": {
+          "refund": true,
+          "partner": "orit"
+        },
+        "odcanit_2": {
+          "refund": true,
+          "partner": "orit"
+        },
+        "odcanit_3": {
+          "refund": true,
+          "partner": "orit"
+        },
+        "odcanit_4": {
+          "refund": false,
+          "partner": "none"
+        },
+        "odcanit_5": {
+          "refund": false,
+          "partner": "none"
+        },
+        "odcanit_6": {
+          "refund": true,
+          "partner": "orit"
+        }
+      },
+      "sharonExpenses": 0,
+      "oritExpenses": 232.79000000000002
     }
   },
   "avgVAT": 2500,
-  "lastUpdate": "2026-04-30T19:20:59.781Z"
+  "lastUpdate": "2026-04-30T19:22:03.288Z"
 }
