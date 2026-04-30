@@ -1653,24 +1653,24 @@
       "oritExpenses": 669.07
     },
     "2026-04": {
-      "billingHours": 111.75,
-      "totalBillings": 46320,
-      "billingExpenses": 546,
-      "retainerFee": 0,
-      "retainerHours": 4,
+      "billingHours": 223.5,
+      "totalBillings": 136405,
+      "billingExpenses": 1045,
+      "retainerFee": 50000,
+      "retainerHours": 37.25,
       "workDays": 21,
-      "incomeWithVAT": 195437,
+      "incomeWithVAT": 206367,
       "expensesWithVAT": 0,
-      "vatToPay": 29812,
+      "vatToPay": 31480,
       "actualVATPaid": "",
-      "openInvoices": 163739,
-      "avgDaysOverdue": 87,
+      "openInvoices": 291927,
+      "avgDaysOverdue": 62,
       "profitDistribution": "",
       "notes": "",
       "transfers": [],
-      "sharonBilling": 29670,
-      "oritBilling": 16650,
-      "activeClients": 17,
+      "sharonBilling": 66583,
+      "oritBilling": 69822,
+      "activeClients": 20,
       "expenses": [
         {
           "ACTID": 10001,
@@ -1689,15 +1689,6 @@
           "date": "2026-04-13",
           "description": "נסיעה לפי ק\"מ",
           "registeredBy": "אורית זילוני-קליינמן"
-        },
-        {
-          "ACTID": 10001,
-          "Category": 2,
-          "amount": 9.99,
-          "billingDescription": "הוצאות",
-          "date": "2026-04-13",
-          "description": "הוצאות כלליות",
-          "registeredBy": "שרון לולצ'י"
         },
         {
           "ACTID": 7,
@@ -1725,11 +1716,29 @@
           "date": "2026-04-19",
           "description": "הוצאות כלליות",
           "registeredBy": "שרון לולצ'י"
+        },
+        {
+          "ACTID": 10001,
+          "Category": 2,
+          "amount": 505,
+          "billingDescription": "כריכות - 5 עותקים לבית הדין - לפי חשבונית גלירוי 29471",
+          "date": "2026-04-28",
+          "description": "הוצאות כלליות",
+          "registeredBy": "שרון לולצ'י"
+        },
+        {
+          "ACTID": 7,
+          "Category": 2,
+          "amount": 94.4,
+          "billingDescription": "תא- רמלה- תא",
+          "date": "2026-04-29",
+          "description": "נסיעה לפי ק\"מ",
+          "registeredBy": "אורית זילוני-קליינמן"
         }
       ],
-      "savedAt": "19/04/2026 20:46"
+      "savedAt": "30/04/2026 22:20"
     }
   },
   "avgVAT": 2500,
-  "lastUpdate": "2026-04-30T19:19:24.774Z"
+  "lastUpdate": "2026-04-30T19:20:59.781Z"
 }
