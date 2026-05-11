@@ -1795,15 +1795,23 @@
     },
     "2026-05": {
       "billingHours": 10,
-      "retainerHours": 1.5,
       "totalBillings": 5113,
       "billingExpenses": 53,
       "retainerFee": 0,
+      "retainerHours": 1.5,
+      "workDays": 20,
+      "incomeWithVAT": 7965,
+      "expensesWithVAT": 0,
+      "vatToPay": 1215,
+      "actualVATPaid": "",
+      "openInvoices": 285177,
+      "avgDaysOverdue": 66,
+      "profitDistribution": "",
+      "notes": "",
+      "transfers": [],
       "sharonBilling": 2813,
       "oritBilling": 2300,
-      "incomeWithVAT": 7965,
-      "vatToPay": 1215,
-      "expensesWithVAT": 0,
+      "activeClients": 5,
       "expenses": [
         {
           "ACTID": 7,
@@ -1824,17 +1832,9 @@
           "registeredBy": "אורית זילוני-קליינמן"
         }
       ],
-      "workDays": 20,
-      "actualVATPaid": "",
-      "openInvoices": 285177,
-      "avgDaysOverdue": 66,
-      "activeClients": 5,
-      "profitDistribution": "",
-      "notes": "",
-      "transfers": [],
       "savedAt": "03/05/2026 15:38"
     }
   },
-  "avgVAT": 2290,
-  "lastUpdate": "2026-05-03T12:38:41.926Z"
+  "avgVAT": 2500,
+  "lastUpdate": "2026-05-11T09:55:58.517Z"
 }
