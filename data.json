@@ -1794,24 +1794,24 @@
       "oritExpenses": 232.79000000000002
     },
     "2026-05": {
-      "billingHours": 10,
-      "totalBillings": 5113,
-      "billingExpenses": 53,
-      "retainerFee": 0,
-      "retainerHours": 1.5,
+      "billingHours": 216.75,
+      "totalBillings": 129185,
+      "billingExpenses": 1636,
+      "retainerFee": 50000,
+      "retainerHours": 55.25,
       "workDays": 20,
-      "incomeWithVAT": 7965,
+      "incomeWithVAT": 160784,
       "expensesWithVAT": 0,
-      "vatToPay": 1215,
+      "vatToPay": 24526,
       "actualVATPaid": "",
-      "openInvoices": 285177,
-      "avgDaysOverdue": 66,
+      "openInvoices": 286490,
+      "avgDaysOverdue": 62,
       "profitDistribution": "",
       "notes": "",
       "transfers": [],
-      "sharonBilling": 2813,
-      "oritBilling": 2300,
-      "activeClients": 5,
+      "sharonBilling": 62372,
+      "oritBilling": 65463,
+      "activeClients": 18,
       "expenses": [
         {
           "ACTID": 7,
@@ -1830,11 +1830,92 @@
           "date": "2026-05-03",
           "description": "הוצאות כלליות",
           "registeredBy": "אורית זילוני-קליינמן"
+        },
+        {
+          "ACTID": 10001,
+          "Category": 2,
+          "amount": 34,
+          "billingDescription": "חניה פנגו",
+          "date": "2026-05-05",
+          "description": "הוצאות כלליות",
+          "registeredBy": "אורית זילוני-קליינמן"
+        },
+        {
+          "ACTID": 7,
+          "Category": 2,
+          "amount": 47.2,
+          "billingDescription": "נסיעה לבית הדין וחזרה",
+          "date": "2026-05-05",
+          "description": "נסיעה לפי ק\"מ",
+          "registeredBy": "אורית זילוני-קליינמן"
+        },
+        {
+          "ACTID": 10001,
+          "Category": 2,
+          "amount": 793,
+          "billingDescription": "שליחות לארצי + למרמלשטיין לפי חשבון יוריסט 15729",
+          "date": "2026-05-10",
+          "description": "הוצאות כלליות",
+          "registeredBy": "שרון לולצ'י"
+        },
+        {
+          "ACTID": 7,
+          "Category": 2,
+          "amount": 141.6,
+          "billingDescription": "נסיעות 30 X 2",
+          "date": "2026-05-13",
+          "description": "נסיעה לפי ק\"מ",
+          "registeredBy": "שרון לולצ'י"
+        },
+        {
+          "ACTID": 7,
+          "Category": 2,
+          "amount": 330.4,
+          "billingDescription": "נסיעה הלוך חזור לירושלים (140 ק\"מ)",
+          "date": "2026-05-26",
+          "description": "נסיעה לפי ק\"מ",
+          "registeredBy": "שרון לולצ'י"
+        },
+        {
+          "ACTID": 10001,
+          "Category": 2,
+          "amount": 391,
+          "billingDescription": "כריכה + שליחות לבית הדין (דחופה) לפי חשבונית גלירוי 29587",
+          "date": "2026-05-26",
+          "description": "הוצאות כלליות",
+          "registeredBy": "שרון לולצ'י"
+        },
+        {
+          "ACTID": 10001,
+          "Category": 2,
+          "amount": 34,
+          "billingDescription": "חניה",
+          "date": "2026-05-27",
+          "description": "הוצאות כלליות",
+          "registeredBy": "אורית זילוני-קליינמן"
+        },
+        {
+          "ACTID": 10001,
+          "Category": 2,
+          "amount": 26,
+          "billingDescription": "חניה",
+          "date": "2026-05-31",
+          "description": "הוצאות כלליות",
+          "registeredBy": "אורית זילוני-קליינמן"
+        },
+        {
+          "ACTID": 7,
+          "Category": 2,
+          "amount": 70.8,
+          "billingDescription": "נסיעה לבית הדין",
+          "date": "2026-05-31",
+          "description": "נסיעה לפי ק\"מ",
+          "registeredBy": "אורית זילוני-קליינמן"
         }
       ],
-      "savedAt": "03/05/2026 15:38"
+      "savedAt": "31/05/2026 18:46"
     }
   },
   "avgVAT": 2500,
-  "lastUpdate": "2026-05-31T15:45:39.329Z"
+  "lastUpdate": "2026-05-31T15:46:18.082Z"
 }
