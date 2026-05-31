@@ -1801,12 +1801,12 @@
       "retainerHours": 55.25,
       "workDays": 20,
       "incomeWithVAT": 160784,
-      "expensesWithVAT": 0,
+      "expensesWithVAT": "12983",
       "vatToPay": 24526,
       "actualVATPaid": "",
       "openInvoices": 286490,
       "avgDaysOverdue": 62,
-      "profitDistribution": "",
+      "profitDistribution": "60000",
       "notes": "",
       "transfers": [],
       "sharonBilling": 62372,
@@ -1913,7 +1913,7 @@
           "registeredBy": "אורית זילוני-קליינמן"
         }
       ],
-      "savedAt": "31/05/2026 18:48",
+      "savedAt": "31/05/2026 18:51",
       "expenseRefunds": {
         "odcanit_0": {
           "refund": true,
@@ -1965,5 +1965,5 @@
     }
   },
   "avgVAT": 2500,
-  "lastUpdate": "2026-05-31T15:48:13.805Z"
+  "lastUpdate": "2026-05-31T15:51:44.654Z"
 }
