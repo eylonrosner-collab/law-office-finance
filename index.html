@@ -6,7 +6,16 @@
     <title>ניהול כספים - משרד עו"ד</title>
     <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script>
+// Give all external scripts time to load
+window.addEventListener('load', function() {
+    console.log('🔄 Page fully loaded, waiting for Babel...');
+    setTimeout(() => {
+        console.log('✅ Babel transformation should be complete');
+    }, 1000);
+});
+</script>
+<script src="https://unpkg.com/@babel/standalone@7/babel.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
@@ -108,10 +117,18 @@
 <body class="bg-gray-50">
 <div id="loading">⏳ טוען מערכת...</div>
 <div id="root"></div>
+<script>
+// Ensure Babel waits for React libraries to load
+window.React = window.React || {};
+window.ReactDOM = window.ReactDOM || {};
+</script>
 <script type="text/babel">
+console.log('🚀 Starting app initialization...');
+
+try {
 const { useState, useEffect } = React;
 
-const APP_VERSION = "4.2";
+const APP_VERSION = "4.4-Bank-Import-Complete";
 
 const HISTORICAL = {
     "2021-01":65000,"2021-02":40000,"2021-03":100000,"2021-04":60000,
@@ -1272,6 +1289,10 @@ function App() {
     const [showExpenses, setShowExpenses] = useState(false);
     const [showExpensesModal, setShowExpensesModal] = useState(false);
     const [odcanitImporting, setOdcanitImporting] = useState(false);
+    const [bankImporting, setBankImporting] = useState(false);
+    const [bankData, setBankData] = useState(null);
+    const [showBankData, setShowBankData] = useState(false);
+    const [selectedExpenses, setSelectedExpenses] = useState({}); // {txnIndex: true/false}
     const fileInputRef   = React.useRef(null);
     const fileInputRef2  = React.useRef(null);
     const fileRestoreRef = React.useRef(null);
@@ -2437,6 +2458,68 @@ function App() {
         }
     }, [data, githubSyncEnabled]);
 
+    // Bank Scraper Functions
+    const fetchBankExpenses = async () => {
+        if (!selMonth || !selYear) {
+            alert('אנא בחר חודש ושנה');
+            return;
+        }
+
+        setBankImporting(true);
+        setBankData(null);
+
+        try {
+            // Create AbortController for timeout
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 180000); // 3 minutes
+
+            const response = await fetch('http://localhost:5000/api/bank-scraper/run', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    year: parseInt(selYear),
+                    month: parseInt(selMonth)
+                }),
+                signal: controller.signal
+            });
+
+            clearTimeout(timeoutId);
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error || `HTTP error! status: ${response.status}`);
+            }
+
+            const result = await response.json();
+
+            if (result.success) {
+                console.log('✅ Bank data imported successfully:', result.data);
+                setBankData(result.data);
+                setShowBankData(true);
+                setImportMsg({
+                    type: 'success',
+                    text: `✅ ייבוא מהבנק הצליח!\n${result.data.accounts.length} חשבונות נמצאו\nחודש: ${result.data.monthName}`
+                });
+            } else {
+                throw new Error(result.error || 'Unknown error');
+            }
+        } catch (error) {
+            console.error('❌ Bank import error:', error);
+            
+            let errorMsg = error.message;
+            if (error.name === 'AbortError') {
+                errorMsg = 'הייבוא לקח יותר מ-3 דקות והופסק.\n\nאולי:\n- הבנק אינו זמין כרגע\n- פרטי ההתחברות שגויים\n- בעיית רשת';
+            }
+            
+            setImportMsg({
+                type: 'error',
+                text: `❌ שגיאה בייבוא מהבנק:\n\n${errorMsg}\n\nוודא ש:\n1. השרת Python רץ על http://localhost:5000\n2. scrape.js נמצא ב-C:\\bank-scraper\\\n3. פרטי התחברות נכונים ב-scrape.js\n4. יש חיבור לאינטרנט`
+            });
+        } finally {
+            setBankImporting(false);
+        }
+    };
+
     const saveMonth = () => {
         if (!selMonth) { alert('אנא בחר חודש'); return; }
         const key = `${selYear}-${selMonth}`;
@@ -2706,7 +2789,7 @@ function App() {
                         LEFT JOIN vwExportToOuterSystems_LoginUsers u ON u.UserID = b.UserID
                         WHERE YEAR(Dated) = ${year} 
                             AND MONTH(Dated) = ${month}
-                            AND Category = 2
+                            AND ACTID IN (7, 10001)
                         ORDER BY Dated
                     `,
                     expensesTotal: `
@@ -2715,7 +2798,7 @@ function App() {
                         FROM vwExportToOuterSystems_Billing
                         WHERE YEAR(Dated) = ${year} 
                             AND MONTH(Dated) = ${month}
-                            AND Category = 2
+                            AND ACTID IN (7, 10001)
                     `,
                     allBillingsDebug: `
                         SELECT TOP 20
@@ -3999,6 +4082,105 @@ function App() {
                                     </div>
                                 </button>
                             </div>
+                            <div>
+                                <button 
+                                    onClick={fetchBankExpenses}
+                                    disabled={bankImporting || !selMonth}
+                                    style={{
+                                        width:'100%',
+                                        padding:'12px 16px',
+                                        borderRadius:8,
+                                        border:'1px solid #bfdbfe',
+                                        background:bankImporting ? '#e5e7eb' : 'linear-gradient(135deg,#dbeafe,#bfdbfe)',
+                                        color:bankImporting ? '#9ca3af' : '#1e40af',
+                                        fontWeight:600,
+                                        cursor:bankImporting || !selMonth ? 'not-allowed' : 'pointer',
+                                        fontSize:'0.9rem',
+                                        textAlign:'right',
+                                        display:'flex',
+                                        alignItems:'center',
+                                        gap:10,
+                                        opacity: bankImporting || !selMonth ? 0.6 : 1
+                                    }}>
+                                    <span style={{fontSize:'1.2rem'}}>🏦</span>
+                                    <div style={{flex:1,textAlign:'right'}}>
+                                        <div style={{fontWeight:700}}>
+                                            {bankImporting ? '⏳ מייבא מהבנק (1-3 דקות)...' : 'ייבא הוצאות מהבנק'}
+                                        </div>
+                                        <div style={{fontSize:'0.75rem',opacity:0.8,marginTop:2}}>מזרחי טפחות - 3 חשבונות</div>
+                                    </div>
+                                </button>
+                            </div>
+                            <div>
+                                <button 
+                                    onClick={async () => {
+                                        setBankImporting(true);
+                                        try {
+                                            const response = await fetch('http://localhost:5000/api/bank-scraper/read-output');
+                                            const result = await response.json();
+                                            if (result.success) {
+                                                setBankData(result.data);
+                                                setShowBankData(true);
+                                                setImportMsg({
+                                                    type: 'success',
+                                                    text: `✅ נתוני בנק נטענו בהצלחה!\n${result.data.accounts.length} חשבונות\nחודש: ${result.data.monthName}`
+                                                });
+                                            } else {
+                                                throw new Error(result.error);
+                                            }
+                                        } catch (error) {
+                                            setImportMsg({
+                                                type: 'error',
+                                                text: `❌ שגיאה בטעינת הקובץ:\n${error.message}\n\nוודא שהשרת Python רץ`
+                                            });
+                                        } finally {
+                                            setBankImporting(false);
+                                        }
+                                    }}
+                                    disabled={bankImporting}
+                                    style={{
+                                        width:'100%',
+                                        padding:'12px 16px',
+                                        borderRadius:8,
+                                        border:'1px solid #d1fae5',
+                                        background:bankImporting ? '#e5e7eb' : 'linear-gradient(135deg,#ecfdf5,#d1fae5)',
+                                        color:bankImporting ? '#9ca3af' : '#065f46',
+                                        fontWeight:600,
+                                        cursor:bankImporting ? 'not-allowed' : 'pointer',
+                                        fontSize:'0.9rem',
+                                        textAlign:'right',
+                                        display:'flex',
+                                        alignItems:'center',
+                                        gap:10,
+                                        opacity: bankImporting ? 0.6 : 1
+                                    }}>
+                                    <span style={{fontSize:'1.2rem'}}>📂</span>
+                                    <div style={{flex:1,textAlign:'right'}}>
+                                        <div style={{fontWeight:700}}>
+                                            טען נתוני בנק אחרונים
+                                        </div>
+                                        <div style={{fontSize:'0.75rem',opacity:0.8,marginTop:2}}>מהקובץ scrape_output.json</div>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div style={{
+                            marginTop:12,
+                            padding:12,
+                            background:'#eff6ff',
+                            borderRadius:6,
+                            fontSize:'0.78rem',
+                            color:'#1e40af',
+                            lineHeight:1.5
+                        }}>
+                            💡 <strong>טיפ:</strong><br/>
+                            • <strong>🏦 ייבא הוצאות מהבנק</strong> - מריץ את הסקריפט ומושך נתונים חדשים מהבנק (לוקח 1-3 דקות)<br/>
+                            • <strong>📂 טען נתוני בנק אחרונים</strong> - טוען את הקובץ האחרון שנוצר (מהיר! מומלץ)<br/>
+                            <br/>
+                            <strong>שיטת עבודה מומלצת:</strong><br/>
+                            1. הרץ ידנית: <code style={{background:'white',padding:'2px 6px',borderRadius:3}}>node scrape.js</code> ב-CMD<br/>
+                            2. לחץ על <strong>📂 טען נתוני בנק אחרונים</strong>
                         </div>
                     </div>
 
@@ -4042,17 +4224,268 @@ function App() {
                     </div>
                 </Modal>
             )}
+
+            {/* Bank Data Display Modal */}
+            {showBankData && bankData && (() => {
+                // Find account 581766
+                const targetAccount = bankData.accounts.find(acc => 
+                    acc.accountNumber === '576-581766' || acc.accountNumber === '581766'
+                );
+                
+                if (!targetAccount) {
+                    return (
+                        <Modal onClose={() => setShowBankData(false)}>
+                            <div style={{padding:'24px',textAlign:'center'}}>
+                                <h2 style={{fontSize:'1.5rem',fontWeight:700,color:'#dc2626',marginBottom:12}}>
+                                    ❌ שגיאה
+                                </h2>
+                                <p>חשבון 581766 לא נמצא בנתונים</p>
+                                <button 
+                                    onClick={() => setShowBankData(false)}
+                                    style={{marginTop:20,padding:'10px 24px',borderRadius:8,border:'none',background:'#3b82f6',color:'white',cursor:'pointer',fontWeight:700}}>
+                                    סגור
+                                </button>
+                            </div>
+                        </Modal>
+                    );
+                }
+                
+                // Filter only expenses (negative amounts)
+                const expenses = targetAccount.transactions
+                    .map((txn, idx) => ({...txn, originalIndex: idx}))
+                    .filter(txn => txn.amount < 0);
+                
+                // Initialize checkboxes if needed
+                if (Object.keys(selectedExpenses).length === 0 && expenses.length > 0) {
+                    const initialSelection = {};
+                    expenses.forEach((txn) => {
+                        initialSelection[txn.originalIndex] = true;
+                    });
+                    setSelectedExpenses(initialSelection);
+                }
+                
+                // Calculate totals
+                const selectedTotal = expenses
+                    .filter(txn => selectedExpenses[txn.originalIndex])
+                    .reduce((sum, txn) => sum + Math.abs(txn.amount), 0);
+                
+                const selectedCount = expenses.filter(txn => selectedExpenses[txn.originalIndex]).length;
+                
+                return (
+                    <Modal onClose={() => setShowBankData(false)}>
+                        <div style={{padding:'24px'}}>
+                            <h2 style={{fontSize:'1.5rem',fontWeight:700,color:'#1e3a5f',marginBottom:8}}>
+                                🏦 בחירת הוצאות - חשבון 581766
+                            </h2>
+                            <p style={{color:'#6b7280',fontSize:'0.85rem',marginBottom:20}}>
+                                {bankData.monthName} | {expenses.length} הוצאות נמצאו
+                            </p>
+
+                            {/* Account Summary Card */}
+                            <div style={{
+                                background:'linear-gradient(135deg,#f0f9ff,#e0f2fe)',
+                                borderRadius:8,
+                                padding:16,
+                                border:'1px solid #bae6fd',
+                                marginBottom:20
+                            }}>
+                                <div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:12,fontSize:'0.85rem'}}>
+                                    <div>
+                                        <div style={{color:'#6b7280',marginBottom:4}}>יתרת חשבון:</div>
+                                        <div style={{fontWeight:700,color:'#0c4a6e',fontSize:'1.1rem'}}>
+                                            ₪{targetAccount.balance.toLocaleString()}
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div style={{color:'#6b7280',marginBottom:4}}>הוצאות בחודש:</div>
+                                        <div style={{fontWeight:700,color:'#dc2626',fontSize:'1.1rem'}}>
+                                            ₪{Math.abs(targetAccount.monthExpense).toLocaleString()}
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div style={{color:'#6b7280',marginBottom:4}}>תנועות הוצאה:</div>
+                                        <div style={{fontWeight:700,color:'#0c4a6e',fontSize:'1.1rem'}}>
+                                            {expenses.length}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Expenses Table with Checkboxes */}
+                            <div style={{maxHeight:'400px',overflowY:'auto',marginBottom:20}}>
+                                <div style={{border:'1px solid #e5e7eb',borderRadius:6,overflow:'hidden'}}>
+                                    <table style={{width:'100%',fontSize:'0.85rem'}}>
+                                        <thead style={{position:'sticky',top:0,background:'#f9fafb',zIndex:10}}>
+                                            <tr>
+                                                <th className="th" style={{textAlign:'center',width:'50px'}}>
+                                                    <input 
+                                                        type="checkbox"
+                                                        checked={selectedCount === expenses.length}
+                                                        onChange={(e) => {
+                                                            const newSelection = {};
+                                                            expenses.forEach(txn => {
+                                                                newSelection[txn.originalIndex] = e.target.checked;
+                                                            });
+                                                            setSelectedExpenses(newSelection);
+                                                        }}
+                                                        style={{width:18,height:18,cursor:'pointer'}}
+                                                    />
+                                                </th>
+                                                <th className="th" style={{textAlign:'right'}}>תאריך</th>
+                                                <th className="th" style={{textAlign:'right'}}>תיאור</th>
+                                                <th className="th" style={{textAlign:'left'}}>סכום</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {expenses.map((txn) => (
+                                                <tr 
+                                                    key={txn.originalIndex} 
+                                                    style={{
+                                                        borderBottom:'1px solid #f3f4f6',
+                                                        background: selectedExpenses[txn.originalIndex] ? '#fef3c7' : 'white',
+                                                        transition:'background 0.2s'
+                                                    }}>
+                                                    <td className="tc" style={{textAlign:'center'}}>
+                                                        <input 
+                                                            type="checkbox"
+                                                            checked={selectedExpenses[txn.originalIndex] || false}
+                                                            onChange={(e) => {
+                                                                setSelectedExpenses(prev => ({
+                                                                    ...prev,
+                                                                    [txn.originalIndex]: e.target.checked
+                                                                }));
+                                                            }}
+                                                            style={{width:18,height:18,cursor:'pointer'}}
+                                                        />
+                                                    </td>
+                                                    <td className="tc" style={{whiteSpace:'nowrap'}}>
+                                                        {txn.date}
+                                                    </td>
+                                                    <td className="tc">
+                                                        {txn.description}
+                                                        {txn.memo && (
+                                                            <div style={{fontSize:'0.75rem',color:'#9ca3af',marginTop:2}}>
+                                                                {txn.memo}
+                                                            </div>
+                                                        )}
+                                                    </td>
+                                                    <td className="tc" style={{
+                                                        textAlign:'left',
+                                                        fontWeight:700,
+                                                        color:'#dc2626'
+                                                    }}>
+                                                        ₪{Math.abs(txn.amount).toLocaleString()}
+                                                    </td>
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            {/* Summary Footer */}
+                            <div style={{
+                                background:'linear-gradient(135deg,#fef3c7,#fde68a)',
+                                borderRadius:8,
+                                padding:16,
+                                border:'2px solid #fbbf24',
+                                marginBottom:20
+                            }}>
+                                <div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:12,textAlign:'center'}}>
+                                    <div>
+                                        <div style={{fontSize:'0.75rem',color:'#92400e',marginBottom:4}}>שורות מסומנות</div>
+                                        <div style={{fontSize:'1.3rem',fontWeight:800,color:'#78350f'}}>
+                                            {selectedCount} / {expenses.length}
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div style={{fontSize:'0.75rem',color:'#92400e',marginBottom:4}}>סה"כ מסומן</div>
+                                        <div style={{fontSize:'1.3rem',fontWeight:800,color:'#dc2626'}}>
+                                            ₪{selectedTotal.toLocaleString()}
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div style={{fontSize:'0.75rem',color:'#92400e',marginBottom:4}}>יתרת חשבון</div>
+                                        <div style={{fontSize:'1.3rem',fontWeight:800,color:'#0c4a6e'}}>
+                                            ₪{targetAccount.balance.toLocaleString()}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style={{display:'flex',justifyContent:'flex-end',gap:12}}>
+                                <button 
+                                    onClick={() => setShowBankData(false)} 
+                                    style={{
+                                        padding:'10px 24px',
+                                        borderRadius:8,
+                                        border:'1px solid #d1d5db',
+                                        background:'white',
+                                        color:'#374151',
+                                        cursor:'pointer',
+                                        fontWeight:600
+                                    }}>
+                                    ביטול
+                                </button>
+                                <button 
+                                    onClick={() => {
+                                        // Import selected expenses
+                                        const currentExpenses = parseFloat(cur.expensesWithVAT || 0);
+                                        const newExpenses = currentExpenses + selectedTotal;
+                                        
+                                        setCur(prev => ({
+                                            ...prev,
+                                            expensesWithVAT: newExpenses.toString()
+                                        }));
+                                        
+                                        setShowBankData(false);
+                                        setSelectedExpenses({});
+                                        
+                                        setImportMsg({
+                                            type: 'success',
+                                            text: `✅ יובאו ${selectedCount} הוצאות בסך ${selectedTotal.toLocaleString()} ₪\n\nהוצאות תפעוליות עודכנו: ${currentExpenses.toLocaleString()} ₪ → ${newExpenses.toLocaleString()} ₪`
+                                        });
+                                    }}
+                                    disabled={selectedCount === 0}
+                                    style={{
+                                        padding:'10px 24px',
+                                        borderRadius:8,
+                                        border:'none',
+                                        background: selectedCount === 0 ? '#e5e7eb' : '#10b981',
+                                        color:'white',
+                                        cursor: selectedCount === 0 ? 'not-allowed' : 'pointer',
+                                        fontWeight:700,
+                                        opacity: selectedCount === 0 ? 0.5 : 1
+                                    }}>
+                                    ✓ ייבא {selectedCount} הוצאות (₪{selectedTotal.toLocaleString()})
+                                </button>
+                            </div>
+                        </div>
+                    </Modal>
+                );
+            })()}
         </div>
     );
 }
 
 // Wait for all libraries to load, then render
 if (typeof React !== 'undefined' && typeof ReactDOM !== 'undefined') {
-    document.getElementById('loading').style.display = 'none';
-    ReactDOM.render(<App/>, document.getElementById('root'));
+    try {
+        document.getElementById('loading').style.display = 'none';
+        ReactDOM.render(<App/>, document.getElementById('root'));
+        console.log('✅ App loaded successfully');
+    } catch (error) {
+        console.error('❌ Error rendering app:', error);
+        document.getElementById('loading').innerHTML = '❌ שגיאה בטעינת המערכת: ' + error.message + '. נסה לרענן את הדף (F5)';
+    }
 } else {
     console.error('React or ReactDOM not loaded!');
     document.getElementById('loading').innerHTML = '❌ שגיאה בטעינת המערכת. נסה לרענן את הדף (F5)';
+}
+
+} catch (babelError) {
+    console.error('❌ Babel transformation error:', babelError);
+    document.getElementById('loading').innerHTML = '❌ שגיאה בטעינת הקוד. נסה לרענן את הדף (F5)';
 }
 </script>
 </body>
