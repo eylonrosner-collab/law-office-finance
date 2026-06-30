@@ -1999,15 +1999,15 @@
       "actualVATPaid": "",
       "openInvoices": "328586.07",
       "avgDaysOverdue": "",
-      "profitDistribution": "",
-      "notes": "",
+      "profitDistribution": "74998",
+      "notes": "הזנה ידנית",
       "transfers": [],
       "sharonBilling": 0,
       "oritBilling": 0,
       "activeClients": 0,
-      "savedAt": "30/06/2026 20:12"
+      "savedAt": "30/06/2026 20:28"
     }
   },
-  "avgVAT": 3945,
-  "lastUpdate": "2026-06-30T17:12:40.019Z"
+  "avgVAT": 27359.89,
+  "lastUpdate": "2026-06-30T17:28:26.806Z"
 }
