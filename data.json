@@ -2012,6 +2012,17 @@
           "notes": "",
           "total": 75135.72,
           "savedAt": "12.7.2026, 21:07:22"
+        },
+        {
+          "partner": "orit",
+          "profitAmount": "75000",
+          "expensesAmount": "70.8",
+          "transferDate": "01/07/2026",
+          "referenceNumber": "",
+          "transferredBy": "אילון",
+          "notes": "",
+          "total": 75070.8,
+          "savedAt": "12.7.2026, 21:07:37"
         }
       ],
       "sharonBilling": 54107,
@@ -2088,5 +2099,5 @@
     }
   },
   "avgVAT": 2500,
-  "lastUpdate": "2026-07-12T18:07:27.717Z"
+  "lastUpdate": "2026-07-12T18:07:41.791Z"
 }
