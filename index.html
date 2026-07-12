@@ -1445,7 +1445,7 @@ function App() {
             `;
             
             console.log('[DEBUG] Checking what DocTypes exist in this month...');
-            const debugCheckResponse = await fetch('http://localhost:5000/api/odcanit-import', {
+            const debugCheckResponse = await fetch('http://localhost:5001/api/odcanit-import', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -1469,7 +1469,7 @@ function App() {
                     AND DocType = 2
                 `;
                 
-                const sampleResponse = await fetch('http://localhost:5000/api/odcanit-import', {
+                const sampleResponse = await fetch('http://localhost:5001/api/odcanit-import', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
@@ -1488,7 +1488,7 @@ function App() {
             }
 
             // Call API to get invoice data
-            const response = await fetch('http://localhost:5000/api/odcanit-import', {
+            const response = await fetch('http://localhost:5001/api/odcanit-import', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -2473,7 +2473,7 @@ function App() {
             const controller = new AbortController();
             const timeoutId = setTimeout(() => controller.abort(), 180000); // 3 minutes
 
-            const response = await fetch('http://localhost:5000/api/bank-scraper/run', {
+            const response = await fetch('http://localhost:5001/api/bank-scraper/run', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -2513,7 +2513,7 @@ function App() {
             
             setImportMsg({
                 type: 'error',
-                text: `❌ שגיאה בייבוא מהבנק:\n\n${errorMsg}\n\nוודא ש:\n1. השרת Python רץ על http://localhost:5000\n2. scrape.js נמצא ב-C:\\bank-scraper\\\n3. פרטי התחברות נכונים ב-scrape.js\n4. יש חיבור לאינטרנט`
+                text: `❌ שגיאה בייבוא מהבנק:\n\n${errorMsg}\n\nוודא ש:\n1. השרת Python רץ על http://localhost:5001\n2. scrape.js נמצא ב-C:\\bank-scraper\\\n3. פרטי התחברות נכונים ב-scrape.js\n4. יש חיבור לאינטרנט`
             });
         } finally {
             setBankImporting(false);
@@ -2885,7 +2885,7 @@ function App() {
 
                 const calculatedWorkDays = calcWorkDays(parseInt(year), parseInt(month));
 
-                const response = await fetch('http://localhost:5000/api/odcanit-import', {
+                const response = await fetch('http://localhost:5001/api/odcanit-import', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
@@ -4035,7 +4035,7 @@ function App() {
                                         • פתח <strong>CMD</strong> (Command Prompt)<br/>
                                         • עבור לתיקייה: <code style={{background:'#fff',padding:'2px 6px',borderRadius:3}}>cd C:\odcanit</code><br/>
                                         • הרץ: <code style={{background:'#fff',padding:'2px 6px',borderRadius:3}}>python odcanit_api_server.py</code><br/>
-                                        • וודא שהשרת רץ על <code style={{background:'#fff',padding:'2px 6px',borderRadius:3}}>http://localhost:5000</code>
+                                        • וודא שהשרת רץ על <code style={{background:'#fff',padding:'2px 6px',borderRadius:3}}>http://localhost:5001</code>
                                     </div>
                                 </div>
                                 
@@ -4046,7 +4046,7 @@ function App() {
                                     <div style={{fontSize:'0.75rem',color:'#166534',fontFamily:'monospace',marginRight:12}}>
                                         🚀 ODCANIT Import API Server<br/>
                                         ✅ חיבור למסד הנתונים הצליח!<br/>
-                                        השרת מאזין על http://localhost:5000
+                                        השרת מאזין על http://localhost:5001
                                     </div>
                                 </div>
                                 
@@ -4116,7 +4116,7 @@ function App() {
                                     onClick={async () => {
                                         setBankImporting(true);
                                         try {
-                                            const response = await fetch('http://localhost:5000/api/bank-scraper/read-output');
+                                            const response = await fetch('http://localhost:5001/api/bank-scraper/read-output');
                                             const result = await response.json();
                                             if (result.success) {
                                                 setBankData(result.data);
