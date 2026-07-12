@@ -2009,27 +2009,27 @@
     },
     "2026-07": {
       "billingHours": "",
-      "retainerHours": "",
       "totalBillings": "",
       "billingExpenses": "",
       "retainerFee": 0,
-      "sharonBilling": 0,
-      "oritBilling": 0,
-      "incomeWithVAT": "",
-      "vatToPay": "",
-      "expensesWithVAT": 0,
-      "expenses": [],
+      "retainerHours": "",
       "workDays": 22,
+      "incomeWithVAT": "",
+      "expensesWithVAT": 0,
+      "vatToPay": "",
       "actualVATPaid": "",
       "openInvoices": "",
       "avgDaysOverdue": "",
-      "activeClients": 0,
       "profitDistribution": "",
       "notes": "",
       "transfers": [],
+      "sharonBilling": 0,
+      "oritBilling": 0,
+      "activeClients": 0,
+      "expenses": [],
       "savedAt": "12/07/2026 14:12"
     }
   },
   "avgVAT": 2500,
-  "lastUpdate": "2026-07-12T11:12:57.386Z"
+  "lastUpdate": "2026-07-12T11:18:46.310Z"
 }
