@@ -2001,7 +2001,19 @@
       "avgDaysOverdue": 101,
       "profitDistribution": "75000",
       "notes": "הזנה ידנית",
-      "transfers": [],
+      "transfers": [
+        {
+          "partner": "sharon",
+          "profitAmount": "75000",
+          "expensesAmount": "135.72",
+          "transferDate": "01/07/2026",
+          "referenceNumber": "3359",
+          "transferredBy": "אילון",
+          "notes": "",
+          "total": 75135.72,
+          "savedAt": "12.7.2026, 21:07:22"
+        }
+      ],
       "sharonBilling": 54107,
       "oritBilling": 79958,
       "activeClients": 22,
@@ -2076,5 +2088,5 @@
     }
   },
   "avgVAT": 2500,
-  "lastUpdate": "2026-07-12T18:04:50.582Z"
+  "lastUpdate": "2026-07-12T18:07:27.717Z"
 }
