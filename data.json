@@ -1987,25 +1987,54 @@
       "oritExpenses": 274.2
     },
     "2026-06": {
-      "billingHours": "217.50",
-      "totalBillings": "142540.02",
-      "billingExpenses": "175.02",
-      "retainerFee": "50000",
-      "retainerHours": "36.50",
-      "workDays": "22",
-      "incomeWithVAT": "179405.05",
+      "billingHours": 217.5,
+      "totalBillings": 140365,
+      "billingExpenses": 175,
+      "retainerFee": 50000,
+      "retainerHours": 36.5,
+      "workDays": 22,
+      "incomeWithVAT": 179405,
       "expensesWithVAT": "11405",
-      "vatToPay": "27366.89",
+      "vatToPay": 27367,
       "actualVATPaid": "",
-      "openInvoices": "328586.07",
-      "avgDaysOverdue": "",
+      "openInvoices": 177813,
+      "avgDaysOverdue": 101,
       "profitDistribution": "75000",
       "notes": "הזנה ידנית",
       "transfers": [],
-      "sharonBilling": 0,
-      "oritBilling": 0,
-      "activeClients": 0,
-      "savedAt": "05/07/2026 07:17"
+      "sharonBilling": 54107,
+      "oritBilling": 79958,
+      "activeClients": 22,
+      "savedAt": "12/07/2026 21:04",
+      "expenses": [
+        {
+          "ACTID": 7,
+          "Category": 2,
+          "amount": 70.8,
+          "billingDescription": "נסיעה לרמלה וחזרה",
+          "date": "2026-06-21",
+          "description": "נסיעה לפי ק\"מ",
+          "registeredBy": "אורית זילוני-קליינמן"
+        },
+        {
+          "ACTID": 10001,
+          "Category": 2,
+          "amount": 72,
+          "billingDescription": "מונית לבית הדין",
+          "date": "2026-06-23",
+          "description": "הוצאות כלליות",
+          "registeredBy": "שרון לולצ'י"
+        },
+        {
+          "ACTID": 10001,
+          "Category": 2,
+          "amount": 63.72,
+          "billingDescription": "נסיעה לרמלה (ועדת מתנדבים)",
+          "date": "2026-06-24",
+          "description": "הוצאות כלליות",
+          "registeredBy": "שרון לולצ'י"
+        }
+      ]
     },
     "2026-07": {
       "billingHours": 63.25,
@@ -2031,5 +2060,5 @@
     }
   },
   "avgVAT": 2500,
-  "lastUpdate": "2026-07-12T18:04:06.645Z"
+  "lastUpdate": "2026-07-12T18:04:32.288Z"
 }
