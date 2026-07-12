@@ -2034,7 +2034,23 @@
           "description": "הוצאות כלליות",
           "registeredBy": "שרון לולצ'י"
         }
-      ]
+      ],
+      "expenseRefunds": {
+        "odcanit_0": {
+          "refund": true,
+          "partner": "orit"
+        },
+        "odcanit_1": {
+          "refund": true,
+          "partner": "sharon"
+        },
+        "odcanit_2": {
+          "refund": true,
+          "partner": "sharon"
+        }
+      },
+      "sharonExpenses": 135.72,
+      "oritExpenses": 70.8
     },
     "2026-07": {
       "billingHours": 63.25,
@@ -2060,5 +2076,5 @@
     }
   },
   "avgVAT": 2500,
-  "lastUpdate": "2026-07-12T18:04:32.288Z"
+  "lastUpdate": "2026-07-12T18:04:50.582Z"
 }
