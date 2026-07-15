@@ -2076,28 +2076,28 @@
       "oritExpenses": 70.8
     },
     "2026-07": {
-      "billingHours": "",
-      "totalBillings": "",
+      "billingHours": 80.5,
+      "totalBillings": 30863,
       "billingExpenses": "",
       "retainerFee": 0,
-      "retainerHours": "",
+      "retainerHours": 16,
       "workDays": 22,
-      "incomeWithVAT": "",
+      "incomeWithVAT": 119981,
       "expensesWithVAT": 0,
-      "vatToPay": "",
+      "vatToPay": 18238,
       "actualVATPaid": "",
-      "openInvoices": 177813,
-      "avgDaysOverdue": 101,
+      "openInvoices": 173552,
+      "avgDaysOverdue": 109,
       "profitDistribution": "",
       "notes": "",
       "transfers": [],
-      "sharonBilling": 0,
-      "oritBilling": 0,
+      "sharonBilling": 27023,
+      "oritBilling": 3840,
       "activeClients": 13,
       "expenses": [],
-      "savedAt": "13/07/2026 15:07"
+      "savedAt": "15/07/2026 15:52"
     }
   },
   "avgVAT": 2500,
-  "lastUpdate": "2026-07-14T17:43:32.771Z"
+  "lastUpdate": "2026-07-15T12:52:34.764Z"
 }
