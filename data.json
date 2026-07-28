@@ -2076,28 +2076,65 @@
       "oritExpenses": 70.8
     },
     "2026-07": {
-      "billingHours": 109.75,
-      "totalBillings": 39098,
-      "billingExpenses": "",
+      "billingHours": 179,
+      "totalBillings": 73223,
+      "billingExpenses": 582,
       "retainerFee": 0,
-      "retainerHours": 25.5,
+      "retainerHours": 33.5,
       "workDays": 22,
-      "incomeWithVAT": 124382,
+      "incomeWithVAT": 125267,
       "expensesWithVAT": 0,
-      "vatToPay": 18909,
+      "vatToPay": 19044,
       "actualVATPaid": "",
-      "openInvoices": 169822,
-      "avgDaysOverdue": 114,
+      "openInvoices": 169072,
+      "avgDaysOverdue": 124,
       "profitDistribution": "",
       "notes": "",
       "transfers": [],
-      "sharonBilling": 33418,
-      "oritBilling": 5680,
-      "activeClients": 13,
-      "expenses": [],
-      "savedAt": "20/07/2026 11:03"
+      "sharonBilling": 54323,
+      "oritBilling": 18900,
+      "activeClients": 20,
+      "expenses": [
+        {
+          "ACTID": 10001,
+          "Category": 2,
+          "amount": 9,
+          "billingDescription": "חניה פנגו",
+          "date": "2026-07-19",
+          "description": "הוצאות כלליות",
+          "registeredBy": "אורית זילוני-קליינמן"
+        },
+        {
+          "ACTID": 10001,
+          "Category": 2,
+          "amount": 101,
+          "billingDescription": "כריכות סיכומים לארצי + תיק מוצגים (לפי חשבונית גלירוי29483)",
+          "date": "2026-07-20",
+          "description": "הוצאות כלליות",
+          "registeredBy": "שרון לולצ'י"
+        },
+        {
+          "ACTID": 10001,
+          "Category": 2,
+          "amount": 68.99,
+          "billingDescription": "חניה בביה\"ד בחיפה",
+          "date": "2026-07-20",
+          "description": "הוצאות כלליות",
+          "registeredBy": "שרון לולצ'י"
+        },
+        {
+          "ACTID": 7,
+          "Category": 2,
+          "amount": 507.4,
+          "billingDescription": "נסיעה אזור- חיפה- אזור",
+          "date": "2026-07-20",
+          "description": "נסיעה לפי ק\"מ",
+          "registeredBy": "אורית זילוני-קליינמן"
+        }
+      ],
+      "savedAt": "28/07/2026 12:51"
     }
   },
   "avgVAT": 2500,
-  "lastUpdate": "2026-07-28T09:51:20.821Z"
+  "lastUpdate": "2026-07-28T09:51:31.271Z"
 }
