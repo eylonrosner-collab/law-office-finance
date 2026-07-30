@@ -2083,7 +2083,7 @@
       "retainerHours": 38,
       "workDays": 22,
       "incomeWithVAT": 125267,
-      "expensesWithVAT": 0,
+      "expensesWithVAT": "10667",
       "vatToPay": 19044,
       "actualVATPaid": "",
       "openInvoices": 300394,
@@ -2182,7 +2182,7 @@
           "registeredBy": "אורית זילוני-קליינמן"
         }
       ],
-      "savedAt": "30/07/2026 16:16",
+      "savedAt": "30/07/2026 16:48",
       "expenseRefunds": {
         "odcanit_0": {
           "refund": true,
@@ -2218,5 +2218,5 @@
     }
   },
   "avgVAT": 2500,
-  "lastUpdate": "2026-07-30T13:16:30.218Z"
+  "lastUpdate": "2026-07-30T13:48:16.204Z"
 }
