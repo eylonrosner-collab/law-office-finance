@@ -2076,24 +2076,24 @@
       "oritExpenses": 70.8
     },
     "2026-07": {
-      "billingHours": 179,
-      "totalBillings": 73223,
-      "billingExpenses": 582,
-      "retainerFee": 0,
-      "retainerHours": 33.5,
+      "billingHours": 213.75,
+      "totalBillings": 135963,
+      "billingExpenses": 710,
+      "retainerFee": 50000,
+      "retainerHours": 38,
       "workDays": 22,
       "incomeWithVAT": 125267,
       "expensesWithVAT": 0,
       "vatToPay": 19044,
       "actualVATPaid": "",
-      "openInvoices": 169072,
-      "avgDaysOverdue": 124,
+      "openInvoices": 300394,
+      "avgDaysOverdue": 77,
       "profitDistribution": "",
       "notes": "",
       "transfers": [],
-      "sharonBilling": 54323,
-      "oritBilling": 18900,
-      "activeClients": 20,
+      "sharonBilling": 66224,
+      "oritBilling": 69739,
+      "activeClients": 21,
       "expenses": [
         {
           "ACTID": 10001,
@@ -2105,13 +2105,13 @@
           "registeredBy": "אורית זילוני-קליינמן"
         },
         {
-          "ACTID": 10001,
+          "ACTID": 7,
           "Category": 2,
-          "amount": 101,
-          "billingDescription": "כריכות סיכומים לארצי + תיק מוצגים (לפי חשבונית גלירוי29483)",
+          "amount": 507.4,
+          "billingDescription": "נסיעה אזור- חיפה- אזור",
           "date": "2026-07-20",
-          "description": "הוצאות כלליות",
-          "registeredBy": "שרון לולצ'י"
+          "description": "נסיעה לפי ק\"מ",
+          "registeredBy": "אורית זילוני-קליינמן"
         },
         {
           "ACTID": 10001,
@@ -2123,18 +2123,45 @@
           "registeredBy": "שרון לולצ'י"
         },
         {
+          "ACTID": 10001,
+          "Category": 2,
+          "amount": 101,
+          "billingDescription": "כריכות סיכומים לארצי + תיק מוצגים (לפי חשבונית גלירוי29483)",
+          "date": "2026-07-20",
+          "description": "הוצאות כלליות",
+          "registeredBy": "שרון לולצ'י"
+        },
+        {
           "ACTID": 7,
           "Category": 2,
-          "amount": 507.4,
-          "billingDescription": "נסיעה אזור- חיפה- אזור",
-          "date": "2026-07-20",
+          "amount": 47.2,
+          "billingDescription": "נסיעה ללשכה וחזרה",
+          "date": "2026-07-28",
+          "description": "נסיעה לפי ק\"מ",
+          "registeredBy": "אורית זילוני-קליינמן"
+        },
+        {
+          "ACTID": 10001,
+          "Category": 2,
+          "amount": 57.010000000000005,
+          "billingDescription": "חניה",
+          "date": "2026-07-28",
+          "description": "הוצאות כלליות",
+          "registeredBy": "אורית זילוני-קליינמן"
+        },
+        {
+          "ACTID": 7,
+          "Category": 2,
+          "amount": 47.2,
+          "billingDescription": "נסיעה לבית הדין וחזרה",
+          "date": "2026-07-28",
           "description": "נסיעה לפי ק\"מ",
           "registeredBy": "אורית זילוני-קליינמן"
         }
       ],
-      "savedAt": "28/07/2026 12:51"
+      "savedAt": "30/07/2026 16:01"
     }
   },
   "avgVAT": 2500,
-  "lastUpdate": "2026-07-30T13:01:55.486Z"
+  "lastUpdate": "2026-07-30T13:02:03.201Z"
 }
