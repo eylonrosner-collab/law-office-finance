@@ -2088,7 +2088,7 @@
       "actualVATPaid": "",
       "openInvoices": 300394,
       "avgDaysOverdue": 77,
-      "profitDistribution": "",
+      "profitDistribution": "45000",
       "notes": "",
       "transfers": [
         {
@@ -2218,5 +2218,5 @@
     }
   },
   "avgVAT": 2500,
-  "lastUpdate": "2026-07-30T13:16:08.800Z"
+  "lastUpdate": "2026-07-30T13:16:30.218Z"
 }
