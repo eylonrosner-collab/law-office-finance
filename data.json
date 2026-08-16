@@ -2085,7 +2085,7 @@
       "incomeWithVAT": 125267,
       "expensesWithVAT": "10667",
       "vatToPay": 19044,
-      "actualVATPaid": "",
+      "actualVATPaid": "13969",
       "openInvoices": 300394,
       "avgDaysOverdue": 77,
       "profitDistribution": "45000",
@@ -2182,7 +2182,7 @@
           "registeredBy": "אורית זילוני-קליינמן"
         }
       ],
-      "savedAt": "30/07/2026 16:48",
+      "savedAt": "16/08/2026 11:28",
       "expenseRefunds": {
         "odcanit_0": {
           "refund": true,
@@ -2217,6 +2217,6 @@
       "oritExpenses": 667.8100000000001
     }
   },
-  "avgVAT": 2500,
-  "lastUpdate": "2026-08-16T08:27:59.999Z"
+  "avgVAT": 5075,
+  "lastUpdate": "2026-08-16T08:28:21.965Z"
 }
