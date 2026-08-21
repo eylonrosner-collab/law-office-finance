@@ -2218,15 +2218,23 @@
     },
     "2026-08": {
       "billingHours": 128.25,
-      "retainerHours": 26,
       "totalBillings": 47813,
       "billingExpenses": 120,
       "retainerFee": 0,
+      "retainerHours": 26,
+      "workDays": 22,
+      "incomeWithVAT": 172007,
+      "expensesWithVAT": 0,
+      "vatToPay": 25969,
+      "actualVATPaid": "",
+      "openInvoices": 155175,
+      "avgDaysOverdue": 132,
+      "profitDistribution": "",
+      "notes": "",
+      "transfers": [],
       "sharonBilling": 26043,
       "oritBilling": 21770,
-      "incomeWithVAT": 172007,
-      "vatToPay": 25969,
-      "expensesWithVAT": 0,
+      "activeClients": 16,
       "expenses": [
         {
           "ACTID": 7,
@@ -2238,17 +2246,9 @@
           "registeredBy": "שרון לולצ'י"
         }
       ],
-      "workDays": 22,
-      "actualVATPaid": "",
-      "openInvoices": 155175,
-      "avgDaysOverdue": 132,
-      "activeClients": 16,
-      "profitDistribution": "",
-      "notes": "",
-      "transfers": [],
       "savedAt": "21/08/2026 09:03"
     }
   },
-  "avgVAT": 5075,
-  "lastUpdate": "2026-08-21T06:03:35.347Z"
+  "avgVAT": 2500,
+  "lastUpdate": "2026-08-21T06:03:50.195Z"
 }
