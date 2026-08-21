@@ -2215,8 +2215,40 @@
       },
       "sharonExpenses": 68.99,
       "oritExpenses": 667.8100000000001
+    },
+    "2026-08": {
+      "billingHours": 128.25,
+      "retainerHours": 26,
+      "totalBillings": 47813,
+      "billingExpenses": 120,
+      "retainerFee": 0,
+      "sharonBilling": 26043,
+      "oritBilling": 21770,
+      "incomeWithVAT": 172007,
+      "vatToPay": 25969,
+      "expensesWithVAT": 0,
+      "expenses": [
+        {
+          "ACTID": 7,
+          "Category": 2,
+          "amount": 141.6,
+          "billingDescription": "הלוך חזור למכללה",
+          "date": "2026-08-05",
+          "description": "נסיעה לפי ק\"מ",
+          "registeredBy": "שרון לולצ'י"
+        }
+      ],
+      "workDays": 22,
+      "actualVATPaid": "",
+      "openInvoices": 155175,
+      "avgDaysOverdue": 132,
+      "activeClients": 16,
+      "profitDistribution": "",
+      "notes": "",
+      "transfers": [],
+      "savedAt": "21/08/2026 09:00"
     }
   },
   "avgVAT": 2500,
-  "lastUpdate": "2026-08-21T06:00:06.731Z"
+  "lastUpdate": "2026-08-21T06:00:15.830Z"
 }
