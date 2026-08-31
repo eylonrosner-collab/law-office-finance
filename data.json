@@ -2217,24 +2217,24 @@
       "oritExpenses": 667.8100000000001
     },
     "2026-08": {
-      "billingHours": 128.25,
-      "totalBillings": 47813,
-      "billingExpenses": 120,
+      "billingHours": 202.75,
+      "totalBillings": 83198,
+      "billingExpenses": 603,
       "retainerFee": 0,
-      "retainerHours": 26,
+      "retainerHours": 28.5,
       "workDays": 22,
-      "incomeWithVAT": 172007,
+      "incomeWithVAT": 173636,
       "expensesWithVAT": 0,
-      "vatToPay": 25969,
+      "vatToPay": 26217,
       "actualVATPaid": "",
-      "openInvoices": 155175,
-      "avgDaysOverdue": 132,
+      "openInvoices": 153795,
+      "avgDaysOverdue": 146,
       "profitDistribution": "",
       "notes": "",
       "transfers": [],
-      "sharonBilling": 26043,
-      "oritBilling": 21770,
-      "activeClients": 16,
+      "sharonBilling": 48608,
+      "oritBilling": 34590,
+      "activeClients": 20,
       "expenses": [
         {
           "ACTID": 7,
@@ -2244,11 +2244,29 @@
           "date": "2026-08-05",
           "description": "נסיעה לפי ק\"מ",
           "registeredBy": "שרון לולצ'י"
+        },
+        {
+          "ACTID": 10001,
+          "Category": 2,
+          "amount": 487.34000000000003,
+          "billingDescription": "שליחות לביה\"ד הארצי (תיק מוצגים) לפ חשבוניות יוריסט16118",
+          "date": "2026-08-13",
+          "description": "הוצאות כלליות",
+          "registeredBy": "שרון לולצ'י"
+        },
+        {
+          "ACTID": 10001,
+          "Category": 2,
+          "amount": 82.6,
+          "billingDescription": "חניה",
+          "date": "2026-08-25",
+          "description": "הוצאות כלליות",
+          "registeredBy": "שרון לולצ'י"
         }
       ],
-      "savedAt": "21/08/2026 09:03"
+      "savedAt": "31/08/2026 17:13"
     }
   },
   "avgVAT": 2500,
-  "lastUpdate": "2026-08-31T14:13:27.114Z"
+  "lastUpdate": "2026-08-31T14:13:40.627Z"
 }
