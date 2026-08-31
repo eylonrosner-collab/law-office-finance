@@ -2224,7 +2224,7 @@
       "retainerHours": 28.5,
       "workDays": 22,
       "incomeWithVAT": 173636,
-      "expensesWithVAT": 0,
+      "expensesWithVAT": "17289",
       "vatToPay": 26217,
       "actualVATPaid": "",
       "openInvoices": 275745,
@@ -2287,7 +2287,7 @@
           "registeredBy": "שרון לולצ'י"
         }
       ],
-      "savedAt": "31/08/2026 17:55",
+      "savedAt": "31/08/2026 17:57",
       "expenseRefunds": {
         "odcanit_0": {
           "refund": true,
@@ -2307,5 +2307,5 @@
     }
   },
   "avgVAT": 2500,
-  "lastUpdate": "2026-08-31T14:55:19.670Z"
+  "lastUpdate": "2026-08-31T14:57:37.489Z"
 }
