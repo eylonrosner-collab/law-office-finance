@@ -2229,7 +2229,7 @@
       "actualVATPaid": "",
       "openInvoices": 275745,
       "avgDaysOverdue": 90,
-      "profitDistribution": "",
+      "profitDistribution": "70000",
       "notes": "",
       "transfers": [
         {
@@ -2287,7 +2287,7 @@
           "registeredBy": "שרון לולצ'י"
         }
       ],
-      "savedAt": "31/08/2026 17:41",
+      "savedAt": "31/08/2026 17:55",
       "expenseRefunds": {
         "odcanit_0": {
           "refund": true,
@@ -2307,5 +2307,5 @@
     }
   },
   "avgVAT": 2500,
-  "lastUpdate": "2026-08-31T14:55:04.416Z"
+  "lastUpdate": "2026-08-31T14:55:19.670Z"
 }
