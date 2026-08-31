@@ -2264,7 +2264,7 @@
           "registeredBy": "שרון לולצ'י"
         }
       ],
-      "savedAt": "31/08/2026 17:14",
+      "savedAt": "31/08/2026 17:41",
       "expenseRefunds": {
         "odcanit_0": {
           "refund": true,
@@ -2284,5 +2284,5 @@
     }
   },
   "avgVAT": 2500,
-  "lastUpdate": "2026-08-31T14:40:59.908Z"
+  "lastUpdate": "2026-08-31T14:41:17.860Z"
 }
