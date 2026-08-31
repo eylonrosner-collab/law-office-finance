@@ -2231,7 +2231,19 @@
       "avgDaysOverdue": 90,
       "profitDistribution": "",
       "notes": "",
-      "transfers": [],
+      "transfers": [
+        {
+          "partner": "sharon",
+          "profitAmount": "70000",
+          "expensesAmount": "224.2",
+          "transferDate": "31/08/2026",
+          "referenceNumber": "12404",
+          "transferredBy": "",
+          "notes": "",
+          "total": 70224.2,
+          "savedAt": "31.8.2026, 17:53:17"
+        }
+      ],
       "sharonBilling": 48608,
       "oritBilling": 84590,
       "activeClients": 20,
@@ -2284,5 +2296,5 @@
     }
   },
   "avgVAT": 2500,
-  "lastUpdate": "2026-08-31T14:42:02.658Z"
+  "lastUpdate": "2026-08-31T14:53:21.950Z"
 }
