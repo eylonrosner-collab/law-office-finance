@@ -2242,6 +2242,17 @@
           "notes": "",
           "total": 70224.2,
           "savedAt": "31.8.2026, 17:53:17"
+        },
+        {
+          "partner": "orit",
+          "profitAmount": "70000",
+          "expensesAmount": "",
+          "transferDate": "31/08/2026",
+          "referenceNumber": "12458",
+          "transferredBy": "",
+          "notes": "",
+          "total": 70000,
+          "savedAt": "31.8.2026, 17:55:00"
         }
       ],
       "sharonBilling": 48608,
@@ -2296,5 +2307,5 @@
     }
   },
   "avgVAT": 2500,
-  "lastUpdate": "2026-08-31T14:53:21.950Z"
+  "lastUpdate": "2026-08-31T14:55:04.416Z"
 }
