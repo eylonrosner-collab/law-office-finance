@@ -2264,9 +2264,25 @@
           "registeredBy": "שרון לולצ'י"
         }
       ],
-      "savedAt": "31/08/2026 17:14"
+      "savedAt": "31/08/2026 17:14",
+      "expenseRefunds": {
+        "odcanit_0": {
+          "refund": true,
+          "partner": "sharon"
+        },
+        "odcanit_1": {
+          "refund": false,
+          "partner": "none"
+        },
+        "odcanit_2": {
+          "refund": true,
+          "partner": "sharon"
+        }
+      },
+      "sharonExpenses": 224.2,
+      "oritExpenses": 0
     }
   },
   "avgVAT": 2500,
-  "lastUpdate": "2026-08-31T14:15:06.651Z"
+  "lastUpdate": "2026-08-31T14:40:59.908Z"
 }
