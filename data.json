@@ -2218,22 +2218,22 @@
     },
     "2026-08": {
       "billingHours": 202.75,
-      "totalBillings": 83198,
+      "totalBillings": 133198,
       "billingExpenses": 603,
-      "retainerFee": 0,
+      "retainerFee": 50000,
       "retainerHours": 28.5,
       "workDays": 22,
       "incomeWithVAT": 173636,
       "expensesWithVAT": 0,
       "vatToPay": 26217,
       "actualVATPaid": "",
-      "openInvoices": 153795,
-      "avgDaysOverdue": 146,
+      "openInvoices": 275745,
+      "avgDaysOverdue": 90,
       "profitDistribution": "",
       "notes": "",
       "transfers": [],
       "sharonBilling": 48608,
-      "oritBilling": 34590,
+      "oritBilling": 84590,
       "activeClients": 20,
       "expenses": [
         {
@@ -2284,5 +2284,5 @@
     }
   },
   "avgVAT": 2500,
-  "lastUpdate": "2026-08-31T14:41:17.860Z"
+  "lastUpdate": "2026-08-31T14:41:32.867Z"
 }
