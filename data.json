@@ -2304,8 +2304,30 @@
       },
       "sharonExpenses": 224.2,
       "oritExpenses": 0
+    },
+    "2026-09": {
+      "billingHours": 16.5,
+      "retainerHours": 2,
+      "totalBillings": 8640,
+      "billingExpenses": "",
+      "retainerFee": 0,
+      "sharonBilling": 8040,
+      "oritBilling": 600,
+      "incomeWithVAT": 25002,
+      "vatToPay": 3814,
+      "expensesWithVAT": 0,
+      "expenses": [],
+      "workDays": 22,
+      "actualVATPaid": "",
+      "openInvoices": 276157,
+      "avgDaysOverdue": 97,
+      "activeClients": 4,
+      "profitDistribution": "",
+      "notes": "",
+      "transfers": [],
+      "savedAt": "02/09/2026 12:38"
     }
   },
   "avgVAT": 2500,
-  "lastUpdate": "2026-09-02T09:38:39.863Z"
+  "lastUpdate": "2026-09-02T09:38:48.330Z"
 }
