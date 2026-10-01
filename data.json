@@ -2226,7 +2226,7 @@
       "incomeWithVAT": 173636,
       "expensesWithVAT": "17289",
       "vatToPay": 26217,
-      "actualVATPaid": "",
+      "actualVATPaid": "23838",
       "openInvoices": 275745,
       "avgDaysOverdue": 90,
       "profitDistribution": "70000",
@@ -2287,7 +2287,7 @@
           "registeredBy": "שרון לולצ'י"
         }
       ],
-      "savedAt": "08/09/2026 12:07",
+      "savedAt": "01/10/2026 19:49",
       "expenseRefunds": {
         "odcanit_0": {
           "refund": true,
@@ -2499,6 +2499,6 @@
       "oritExpenses": 574.4000000000001
     }
   },
-  "avgVAT": 5075,
-  "lastUpdate": "2026-10-01T16:48:48.134Z"
+  "avgVAT": 2379,
+  "lastUpdate": "2026-10-01T16:49:23.691Z"
 }
