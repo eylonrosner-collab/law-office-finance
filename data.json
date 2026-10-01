@@ -2307,9 +2307,9 @@
     },
     "2026-09": {
       "billingHours": 150,
-      "totalBillings": 73545,
+      "totalBillings": "123545",
       "billingExpenses": 2778,
-      "retainerFee": 0,
+      "retainerFee": "50000",
       "retainerHours": 21.25,
       "workDays": 22,
       "incomeWithVAT": 141291,
@@ -2448,7 +2448,7 @@
           "registeredBy": "אורית זילוני-קליינמן"
         }
       ],
-      "savedAt": "01/10/2026 19:40",
+      "savedAt": "01/10/2026 19:44",
       "expenseRefunds": {
         "odcanit_0": {
           "refund": true,
@@ -2500,5 +2500,5 @@
     }
   },
   "avgVAT": 5075,
-  "lastUpdate": "2026-10-01T16:40:49.865Z"
+  "lastUpdate": "2026-10-01T16:44:33.882Z"
 }
