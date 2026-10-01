@@ -2306,24 +2306,24 @@
       "oritExpenses": 0
     },
     "2026-09": {
-      "billingHours": 105.75,
-      "totalBillings": 48948,
-      "billingExpenses": 1926,
+      "billingHours": 150,
+      "totalBillings": 73545,
+      "billingExpenses": 2778,
       "retainerFee": 0,
-      "retainerHours": 20.25,
+      "retainerHours": 21.25,
       "workDays": 22,
-      "incomeWithVAT": 115520,
+      "incomeWithVAT": 141291,
       "expensesWithVAT": 0,
-      "vatToPay": 17622,
+      "vatToPay": 21553,
       "actualVATPaid": "",
-      "openInvoices": 199445,
-      "avgDaysOverdue": 129,
+      "openInvoices": 294328,
+      "avgDaysOverdue": 83,
       "profitDistribution": "",
       "notes": "",
       "transfers": [],
-      "sharonBilling": 27113,
-      "oritBilling": 21080,
-      "activeClients": 13,
+      "sharonBilling": 43143,
+      "oritBilling": 29648,
+      "activeClients": 17,
       "expenses": [
         {
           "ACTID": 7,
@@ -2333,6 +2333,15 @@
           "date": "2026-09-02",
           "description": "נסיעה לפי ק\"מ",
           "registeredBy": "אורית זילוני-קליינמן"
+        },
+        {
+          "ACTID": 10001,
+          "Category": 2,
+          "amount": 420,
+          "billingDescription": "אגרת בית משפט",
+          "date": "2026-09-06",
+          "description": "הוצאות כלליות",
+          "registeredBy": "שרון לולצ'י"
         },
         {
           "ACTID": 10001,
@@ -2355,9 +2364,18 @@
         {
           "ACTID": 10001,
           "Category": 2,
-          "amount": 420,
-          "billingDescription": "אגרת בית משפט",
-          "date": "2026-09-06",
+          "amount": 114.46000000000001,
+          "billingDescription": "כריכות לפי חשבונית גלירוי 30041",
+          "date": "2026-09-07",
+          "description": "הוצאות כלליות",
+          "registeredBy": "שעה משותפת"
+        },
+        {
+          "ACTID": 10001,
+          "Category": 2,
+          "amount": 1054.92,
+          "billingDescription": "צילומים וכריכות לפי חשבונית גלירוי 30040",
+          "date": "2026-09-07",
           "description": "הוצאות כלליות",
           "registeredBy": "שרון לולצ'י"
         },
@@ -2373,25 +2391,43 @@
         {
           "ACTID": 10001,
           "Category": 2,
-          "amount": 114.46000000000001,
-          "billingDescription": "כריכות לפי חשבונית גלירוי 30041",
-          "date": "2026-09-07",
+          "amount": 177,
+          "billingDescription": "טל' גלברד + הודעה לפתיחת גישה בנט",
+          "date": "2026-09-22",
           "description": "הוצאות כלליות",
-          "registeredBy": "שעה משותפת"
+          "registeredBy": "שרון לולצ'י"
+        },
+        {
+          "ACTID": 7,
+          "Category": 2,
+          "amount": 236,
+          "billingDescription": "נסיעה לביה\"ד בחיפה הלוך חזור",
+          "date": "2026-09-22",
+          "description": "נסיעה לפי ק\"מ",
+          "registeredBy": "שרון לולצ'י"
         },
         {
           "ACTID": 10001,
           "Category": 2,
-          "amount": 1054.92,
-          "billingDescription": "צילומים וכריכות לפי חשבונית גלירוי 30040",
-          "date": "2026-09-07",
+          "amount": 73.5,
+          "billingDescription": "חניה בבית הדיון (גישור)",
+          "date": "2026-09-22",
           "description": "הוצאות כלליות",
           "registeredBy": "שרון לולצ'י"
+        },
+        {
+          "ACTID": 7,
+          "Category": 2,
+          "amount": 519.2,
+          "billingDescription": "אזור- חיפה - אזור",
+          "date": "2026-09-23",
+          "description": "נסיעה לפי ק\"מ",
+          "registeredBy": "אורית זילוני-קליינמן"
         }
       ],
-      "savedAt": "17/09/2026 21:14"
+      "savedAt": "01/10/2026 19:36"
     }
   },
-  "avgVAT": 2500,
-  "lastUpdate": "2026-10-01T16:35:38.882Z"
+  "avgVAT": 5075,
+  "lastUpdate": "2026-10-01T16:36:03.787Z"
 }
