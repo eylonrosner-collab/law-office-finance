@@ -2448,7 +2448,7 @@
           "registeredBy": "אורית זילוני-קליינמן"
         }
       ],
-      "savedAt": "01/10/2026 19:50",
+      "savedAt": "04/10/2026 10:53",
       "expenseRefunds": {
         "odcanit_0": {
           "refund": true,
@@ -2500,5 +2500,5 @@
     }
   },
   "avgVAT": 2500,
-  "lastUpdate": "2026-10-04T07:51:52.336Z"
+  "lastUpdate": "2026-10-04T07:53:11.897Z"
 }
