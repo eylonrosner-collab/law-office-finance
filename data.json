@@ -2497,8 +2497,85 @@
       },
       "sharonExpenses": 309.5,
       "oritExpenses": 574.4000000000001
+    },
+    "2026-10": {
+      "billingHours": 228.75,
+      "retainerHours": 45.25,
+      "totalBillings": 187863,
+      "billingExpenses": 1208,
+      "retainerFee": 100000,
+      "sharonBilling": 60773,
+      "oritBilling": 127090,
+      "incomeWithVAT": 186706,
+      "vatToPay": 28417,
+      "expensesWithVAT": 0,
+      "expenses": [
+        {
+          "ACTID": 7,
+          "Category": 2,
+          "amount": 472,
+          "billingDescription": "אזור- חיפה- אזור",
+          "date": "2026-10-19",
+          "description": "נסיעה לפי ק\"מ",
+          "registeredBy": "אורית זילוני-קליינמן"
+        },
+        {
+          "ACTID": 10001,
+          "Category": 2,
+          "amount": 74,
+          "billingDescription": "חניה בבית הדין",
+          "date": "2026-10-19",
+          "description": "הוצאות כלליות",
+          "registeredBy": "אורית זילוני-קליינמן"
+        },
+        {
+          "ACTID": 7,
+          "Category": 2,
+          "amount": 70.8,
+          "billingDescription": "נסיעה לרמלה וחזרה",
+          "date": "2026-10-25",
+          "description": "נסיעה לפי ק\"מ",
+          "registeredBy": "אורית זילוני-קליינמן"
+        },
+        {
+          "ACTID": 7,
+          "Category": 2,
+          "amount": 47.2,
+          "billingDescription": "נסיעה לראשון וחזרה (משם מאיה לקחה אותי לבאר שבע)",
+          "date": "2026-10-26",
+          "description": "נסיעה לפי ק\"מ",
+          "registeredBy": "אורית זילוני-קליינמן"
+        },
+        {
+          "ACTID": 10001,
+          "Category": 2,
+          "amount": 284.38,
+          "billingDescription": "שליחויות לקופ\"ג לפי חשבונית יוריסט מס' 16300",
+          "date": "2026-10-28",
+          "description": "הוצאות כלליות",
+          "registeredBy": "שרון לולצ'י"
+        },
+        {
+          "ACTID": 10001,
+          "Category": 2,
+          "amount": 476.72,
+          "billingDescription": "שליחות - הגשת ערעור לארצי - לפי חשבונית יוריסט 16300",
+          "date": "2026-10-28",
+          "description": "הוצאות כלליות",
+          "registeredBy": "שרון לולצ'י"
+        }
+      ],
+      "workDays": 21,
+      "actualVATPaid": "",
+      "openInvoices": 275108,
+      "avgDaysOverdue": 78,
+      "activeClients": 23,
+      "profitDistribution": "",
+      "notes": "",
+      "transfers": [],
+      "savedAt": "29/10/2026 17:48"
     }
   },
-  "avgVAT": 2500,
-  "lastUpdate": "2026-10-29T15:48:27.805Z"
+  "avgVAT": 1656,
+  "lastUpdate": "2026-10-29T15:48:57.249Z"
 }
