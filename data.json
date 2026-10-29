@@ -2500,15 +2500,46 @@
     },
     "2026-10": {
       "billingHours": 228.75,
-      "retainerHours": 45.25,
       "totalBillings": 187863,
       "billingExpenses": 1208,
       "retainerFee": "50000",
+      "retainerHours": 45.25,
+      "workDays": 21,
+      "incomeWithVAT": 186706,
+      "expensesWithVAT": "10853",
+      "vatToPay": 28417,
+      "actualVATPaid": "",
+      "openInvoices": 275108,
+      "avgDaysOverdue": 78,
+      "profitDistribution": "75000",
+      "notes": "",
+      "transfers": [
+        {
+          "partner": "sharon",
+          "profitAmount": "75000",
+          "expensesAmount": "",
+          "transferDate": "29/10/2026",
+          "referenceNumber": "4324",
+          "transferredBy": "",
+          "notes": "",
+          "total": 75000,
+          "savedAt": "29.10.2026, 17:59:01"
+        },
+        {
+          "partner": "orit",
+          "profitAmount": "75000",
+          "expensesAmount": "664",
+          "transferDate": "29/10/2026",
+          "referenceNumber": "4343",
+          "transferredBy": "",
+          "notes": "",
+          "total": 75664,
+          "savedAt": "29.10.2026, 17:59:21"
+        }
+      ],
       "sharonBilling": 60773,
       "oritBilling": 127090,
-      "incomeWithVAT": 186706,
-      "vatToPay": 28417,
-      "expensesWithVAT": "10853",
+      "activeClients": 23,
       "expenses": [
         {
           "ACTID": 7,
@@ -2565,37 +2596,6 @@
           "registeredBy": "שרון לולצ'י"
         }
       ],
-      "workDays": 21,
-      "actualVATPaid": "",
-      "openInvoices": 275108,
-      "avgDaysOverdue": 78,
-      "activeClients": 23,
-      "profitDistribution": "75000",
-      "notes": "",
-      "transfers": [
-        {
-          "partner": "sharon",
-          "profitAmount": "75000",
-          "expensesAmount": "",
-          "transferDate": "29/10/2026",
-          "referenceNumber": "4324",
-          "transferredBy": "",
-          "notes": "",
-          "total": 75000,
-          "savedAt": "29.10.2026, 17:59:01"
-        },
-        {
-          "partner": "orit",
-          "profitAmount": "75000",
-          "expensesAmount": "664",
-          "transferDate": "29/10/2026",
-          "referenceNumber": "4343",
-          "transferredBy": "",
-          "notes": "",
-          "total": 75664,
-          "savedAt": "29.10.2026, 17:59:21"
-        }
-      ],
       "savedAt": "29/10/2026 17:59",
       "expenseRefunds": {
         "odcanit_0": {
@@ -2627,6 +2627,6 @@
       "oritExpenses": 664
     }
   },
-  "avgVAT": 1656,
-  "lastUpdate": "2026-10-29T15:59:37.183Z"
+  "avgVAT": 2500,
+  "lastUpdate": "2026-10-29T16:15:04.389Z"
 }
