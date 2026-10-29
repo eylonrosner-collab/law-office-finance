@@ -2570,7 +2570,7 @@
       "openInvoices": 275108,
       "avgDaysOverdue": 78,
       "activeClients": 23,
-      "profitDistribution": "",
+      "profitDistribution": "75000",
       "notes": "",
       "transfers": [
         {
@@ -2596,7 +2596,7 @@
           "savedAt": "29.10.2026, 17:59:21"
         }
       ],
-      "savedAt": "29/10/2026 17:54",
+      "savedAt": "29/10/2026 17:59",
       "expenseRefunds": {
         "odcanit_0": {
           "refund": true,
@@ -2628,5 +2628,5 @@
     }
   },
   "avgVAT": 1656,
-  "lastUpdate": "2026-10-29T15:59:25.066Z"
+  "lastUpdate": "2026-10-29T15:59:37.183Z"
 }
