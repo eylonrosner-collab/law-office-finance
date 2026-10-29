@@ -2583,6 +2583,17 @@
           "notes": "",
           "total": 75000,
           "savedAt": "29.10.2026, 17:59:01"
+        },
+        {
+          "partner": "orit",
+          "profitAmount": "75000",
+          "expensesAmount": "664",
+          "transferDate": "29/10/2026",
+          "referenceNumber": "4343",
+          "transferredBy": "",
+          "notes": "",
+          "total": 75664,
+          "savedAt": "29.10.2026, 17:59:21"
         }
       ],
       "savedAt": "29/10/2026 17:54",
@@ -2617,5 +2628,5 @@
     }
   },
   "avgVAT": 1656,
-  "lastUpdate": "2026-10-29T15:59:06.073Z"
+  "lastUpdate": "2026-10-29T15:59:25.066Z"
 }
