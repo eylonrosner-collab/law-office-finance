@@ -2573,9 +2573,37 @@
       "profitDistribution": "",
       "notes": "",
       "transfers": [],
-      "savedAt": "29/10/2026 17:54"
+      "savedAt": "29/10/2026 17:54",
+      "expenseRefunds": {
+        "odcanit_0": {
+          "refund": true,
+          "partner": "orit"
+        },
+        "odcanit_1": {
+          "refund": true,
+          "partner": "orit"
+        },
+        "odcanit_2": {
+          "refund": true,
+          "partner": "orit"
+        },
+        "odcanit_3": {
+          "refund": true,
+          "partner": "orit"
+        },
+        "odcanit_4": {
+          "refund": false,
+          "partner": "none"
+        },
+        "odcanit_5": {
+          "refund": false,
+          "partner": "none"
+        }
+      },
+      "sharonExpenses": 0,
+      "oritExpenses": 664
     }
   },
   "avgVAT": 1656,
-  "lastUpdate": "2026-10-29T15:54:29.406Z"
+  "lastUpdate": "2026-10-29T15:54:57.499Z"
 }
