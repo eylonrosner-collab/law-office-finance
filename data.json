@@ -2572,7 +2572,19 @@
       "activeClients": 23,
       "profitDistribution": "",
       "notes": "",
-      "transfers": [],
+      "transfers": [
+        {
+          "partner": "sharon",
+          "profitAmount": "75000",
+          "expensesAmount": "",
+          "transferDate": "29/10/2026",
+          "referenceNumber": "4324",
+          "transferredBy": "",
+          "notes": "",
+          "total": 75000,
+          "savedAt": "29.10.2026, 17:59:01"
+        }
+      ],
       "savedAt": "29/10/2026 17:54",
       "expenseRefunds": {
         "odcanit_0": {
@@ -2605,5 +2617,5 @@
     }
   },
   "avgVAT": 1656,
-  "lastUpdate": "2026-10-29T15:54:57.499Z"
+  "lastUpdate": "2026-10-29T15:59:06.073Z"
 }
