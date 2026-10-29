@@ -2503,12 +2503,12 @@
       "retainerHours": 45.25,
       "totalBillings": 187863,
       "billingExpenses": 1208,
-      "retainerFee": 100000,
+      "retainerFee": "50000",
       "sharonBilling": 60773,
       "oritBilling": 127090,
       "incomeWithVAT": 186706,
       "vatToPay": 28417,
-      "expensesWithVAT": 0,
+      "expensesWithVAT": "10853",
       "expenses": [
         {
           "ACTID": 7,
@@ -2573,9 +2573,9 @@
       "profitDistribution": "",
       "notes": "",
       "transfers": [],
-      "savedAt": "29/10/2026 17:48"
+      "savedAt": "29/10/2026 17:54"
     }
   },
   "avgVAT": 1656,
-  "lastUpdate": "2026-10-29T15:48:57.249Z"
+  "lastUpdate": "2026-10-29T15:54:29.406Z"
 }
